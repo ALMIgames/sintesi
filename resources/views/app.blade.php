@@ -11,6 +11,21 @@
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
+    <!--------------CSS JS ETC---------------------->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/font-awesome-ie7.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/prettify.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/ace-fonts.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/ace.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/ace-rtl.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/ace-skins.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/ace-ie.min.css') }}" rel="stylesheet" />
+
+
+
+
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -35,7 +50,6 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
 				</ul>
-
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
