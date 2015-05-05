@@ -38,7 +38,7 @@ public function load($name)
  //look in the partials for this page or layout
  $path = "/{$type}s/partials/{$item_name}/{$file}.mustache";
  if(!is_file($this->baseDir.$path)) {
-	//look in the upper folder, which contains partials for all pages or layouts
+	//look in the upper folder, which contains partials for all pages or includes
 	$path = "/{$type}s/partials/_shared/{$file}.mustache";
 	if(!is_file($this->baseDir.$path)) return '';
  }

@@ -41,7 +41,7 @@ module.exports = function() {
 	 //why? because when we have "level-2"=true  then parent's "level-1" will also be true,
 	 //and mustache looks up the parent context's value as well, so the part between {{#level-1}}{{/level-1}} will be
 	 //executed even when we are printing level-2 menu items (i.e submenu) recursively
-	 //see views/layouts/partials/default/sidenav/items.mustache
+	 //see views/includes/partials/default/sidenav/items.mustache
 	 //maybe using something like handlebars with a little bit of logic is better here
 	 //or perhaps not using recursive partials, and a different partial for each submenu level
 

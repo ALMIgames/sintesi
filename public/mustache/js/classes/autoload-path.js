@@ -17,7 +17,7 @@ module.exports = function(partial_name , names , paths) {
 		//look in the partials for this page or layout
 		$path = paths['views']+"/"+type+"s/partials/"+item_name+"/"+file+".mustache";
 		if(!fs.existsSync($path)) {
-			//look in the upper folder, partials for all pages or layouts
+			//look in the upper folder, partials for all pages or includes
 			$path = paths['views']+"/"+type+"s/partials/_shared/"+file+".mustache";
 			if(!fs.existsSync($path)) return '';
 		}
