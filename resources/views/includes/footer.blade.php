@@ -1,1 +1,1 @@
-<div id="copyright text-right">© Copyright 2013 Scotchy Scotch Scotch</div>
+<!--<div id="copyright text-right">© Copyright Sintesi 2015</div>-->
