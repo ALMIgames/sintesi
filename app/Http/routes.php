@@ -11,29 +11,18 @@
 |
 */
 Route::get('/', function() {
-    return View::make('auth.login');
+    return View::make('pages.home');
 });
 
 Route::get('home', function() {
     return View::make('pages.home');
 });
 
-Route::get('about', function() {
-    return View::make('pages.about');
-});
-
-Route::get('projects', function() {
-    return View::make('pages.projects');
-});
-
-Route::get('contact', function() {
-    return View::make('pages.contact');
-});
-
 Route::get('inici', function() {
     return View::make('pages.home');
 });
 
+//TREBALLADORS
 Route::get('creartreballador', function() {
     return View::make('treballadors.creartreballador');
 });
@@ -45,6 +34,62 @@ Route::get('llistartreballador', function() {
 Route::get('esborrartreballador', function() {
     return View::make('treballadors.esborrartreballador');
 });
+
+//CLIENTS
+Route::get('crearclient', function() {
+    return View::make('clients.crearclient');
+});
+
+Route::get('llistarclient', function() {
+    return View::make('clients.llistarclient');
+});
+
+Route::get('esborrarclient', function() {
+    return View::make('clients.esborrarclient');
+});
+
+
+//RELACIONS
+Route::get('crearrelacio', function() {
+    return View::make('relacions.crearrelacio');
+});
+
+Route::get('llistarrelacio', function() {
+    return View::make('relacions.llistarrelacio');
+});
+
+Route::get('esborrarrelacio', function() {
+    return View::make('relacions.esborrarrelacio');
+});
+
+
+//TASQUES
+Route::get('creartasca', function() {
+    return View::make('tasques.creartasca');
+});
+
+Route::get('llistartasca', function() {
+    return View::make('tasques.llistartasca');
+});
+
+Route::get('esborrartasca', function() {
+    return View::make('tasques.esborrartasca');
+});
+
+
+//INCIDENCIES
+Route::get('crearincidencia', function() {
+    return View::make('incidencies.crearincidencia');
+});
+
+Route::get('llistarincidencia', function() {
+    return View::make('incidencies.llistarincidencia');
+});
+
+Route::get('esborrarincidencia', function() {
+    return View::make('incidencies.esborrarincidencia');
+});
+
 
 
 
