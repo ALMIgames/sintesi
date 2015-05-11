@@ -30,6 +30,22 @@ Route::get('contact', function() {
     return View::make('pages.contact');
 });
 
+Route::get('inici', function() {
+    return View::make('pages.home');
+});
+
+Route::get('creartreballador', function() {
+    return View::make('treballadors.creartreballador');
+});
+
+Route::get('llistartreballador', function() {
+    return View::make('treballadors.llistartreballador');
+});
+
+Route::get('esborrartreballador', function() {
+    return View::make('treballadors.esborrartreballador');
+});
+
 
 
 /*

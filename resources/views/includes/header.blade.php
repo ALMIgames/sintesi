@@ -1,15 +1,17 @@
-<body>
 <div class="navbar navbar-default" id="navbar">
+    <script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    </script>
+
     <div class="navbar-container" id="navbar-container">
         <div class="navbar-header pull-left">
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="icon-leaf"></i>
-                    Sintesi 2015
+                    Ace Admin
                 </small>
             </a><!-- /.brand -->
-        </div>
-        <!-- /.navbar-header -->
+        </div><!-- /.navbar-header -->
 
         <div class="navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
@@ -28,12 +30,51 @@
                         <li>
                             <a href="#">
                                 <div class="clearfix">
-                                    <span class="pull-left">Task Name</span>
+                                    <span class="pull-left">Software Update</span>
                                     <span class="pull-right">65%</span>
                                 </div>
 
                                 <div class="progress progress-mini ">
                                     <div style="width:65%" class="progress-bar "></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Hardware Upgrade</span>
+                                    <span class="pull-right">35%</span>
+                                </div>
+
+                                <div class="progress progress-mini ">
+                                    <div style="width:35%" class="progress-bar progress-bar-danger"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Unit Testing</span>
+                                    <span class="pull-right">15%</span>
+                                </div>
+
+                                <div class="progress progress-mini ">
+                                    <div style="width:15%" class="progress-bar progress-bar-warning"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+                                    <span class="pull-left">Bug Fixes</span>
+                                    <span class="pull-right">90%</span>
+                                </div>
+
+                                <div class="progress progress-mini progress-striped active">
+                                    <div style="width:90%" class="progress-bar progress-bar-success"></div>
                                 </div>
                             </a>
                         </li>
@@ -73,6 +114,37 @@
 
                         <li>
                             <a href="#">
+                                <i class="btn btn-xs btn-primary icon-user"></i>
+                                Bob just signed up as an editor ...
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success icon-shopping-cart"></i>
+												New Orders
+											</span>
+                                    <span class="pull-right badge badge-success">+8</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info icon-twitter"></i>
+												Followers
+											</span>
+                                    <span class="pull-right badge badge-info">+11</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
                                 See all notifications
                                 <i class="icon-arrow-right"></i>
                             </a>
@@ -94,16 +166,50 @@
 
                         <li>
                             <a href="#">
-                                <img src="{{ asset('avatars/avatar.png') }}" class="msg-photo" alt="Alex's Avatar"/>
+                                <img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 										<span class="msg-body">
 											<span class="msg-title">
 												<span class="blue">Alex:</span>
-												Message Summary
+												Ciao sociis natoque penatibus et auctor ...
 											</span>
 
 											<span class="msg-time">
 												<i class="icon-time"></i>
-												<span>Message Time</span>
+												<span>a moment ago</span>
+											</span>
+										</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+										<span class="msg-body">
+											<span class="msg-title">
+												<span class="blue">Susan:</span>
+												Vestibulum id ligula porta felis euismod ...
+											</span>
+
+											<span class="msg-time">
+												<i class="icon-time"></i>
+												<span>20 minutes ago</span>
+											</span>
+										</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+										<span class="msg-body">
+											<span class="msg-title">
+												<span class="blue">Bob:</span>
+												Nullam quis risus eget urna mollis ornare ...
+											</span>
+
+											<span class="msg-time">
+												<i class="icon-time"></i>
+												<span>3:15 pm</span>
 											</span>
 										</span>
                             </a>
@@ -120,20 +226,27 @@
 
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="{{ asset('avatars/user.jpg') }}" alt="Jason's Photo"/>
+                        <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									<php echo $users.name; ?>
+									Jason
 								</span>
 
                         <i class="icon-caret-down"></i>
                     </a>
 
-                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
                             <a href="#">
                                 <i class="icon-cog"></i>
                                 Settings
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                Profile
                             </a>
                         </li>
 
@@ -147,20 +260,13 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
-            <!-- /.ace-nav -->
-        </div>
-        <!-- /.navbar-header -->
-    </div>
-    <!-- /.container -->
+            </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
 </div>
-
 <div class="main-container" id="main-container">
     <script type="text/javascript">
-        try {
-            ace.settings.check('main-container', 'fixed')
-        } catch (e) {
-        }
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
     </script>
 
     <div class="main-container-inner">
@@ -170,85 +276,55 @@
 
         <div class="sidebar" id="sidebar">
             <script type="text/javascript">
-                try {
-                    ace.settings.check('sidebar', 'fixed')
-                } catch (e) {
-                }
+                try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
             </script>
 
-            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                    <button class="btn btn-success">
-                        <i class="icon-signal"></i>
-                    </button>
-
-                    <button class="btn btn-info">
-                        <i class="icon-pencil"></i>
-                    </button>
-
-                    <button class="btn btn-warning">
-                        <i class="icon-group"></i>
-                    </button>
-
-                    <button class="btn btn-danger">
-                        <i class="icon-cogs"></i>
-                    </button>
-                </div>
-
-                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-                    <span class="btn btn-success"></span>
-
-                    <span class="btn btn-info"></span>
-
-                    <span class="btn btn-warning"></span>
-
-                    <span class="btn btn-danger"></span>
-                </div>
-            </div>
-            <!-- #sidebar-shortcuts -->
 
             <ul class="nav nav-list">
                 <li>
-                    <a href="index.html">
+                    <a href="inici">
                         <i class="icon-dashboard"></i>
-                        <span class="menu-text"> Inici</span>
+                        <span class="menu-text"> Inici </span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="#" class="dropdown-toggle">
-                        <i class="icon-lock"></i>
-                        <span class="menu-text">Treballadors </span>
 
-                        <b class="arrow icon-angle-down"></b>
-                    </a>
-
-                    <ul class="submenu">
-                        <li>
-                            <a href="elements.html">
-                                <i class="icon-double-angle-right"></i>
-                                Crear
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="buttons.html">
-                                <i class="icon-double-angle-right"></i>
-                                Llistar
-                            </a>
-                        </li>
-                        <li>
-                            <a href="buttons.html">
-                                <i class="icon-double-angle-right"></i>
-                                Esborrar
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
                     <a href="#" class="dropdown-toggle">
                         <i class="icon-user"></i>
-                        <span class="menu-text">Clients </span>
+                        <span class="menu-text"> Treballadors </span>
+
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="creartreballador">
+                                <i class="icon-double-angle-right"></i>
+                                Crear
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="llistartreballador">
+                                <i class="icon-double-angle-right"></i>
+                                Llistar
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="esborrartreballador">
+                                <i class="icon-double-angle-right"></i>
+                                Esborrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-group"></i>
+                        <span class="menu-text"> Clients </span>
 
                         <b class="arrow icon-angle-down"></b>
                     </a>
@@ -267,18 +343,20 @@
                                 Llistar
                             </a>
                         </li>
+
                         <li>
-                            <a href="buttons.html">
+                            <a href="treeview.html">
                                 <i class="icon-double-angle-right"></i>
                                 Esborrar
                             </a>
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="#" class="dropdown-toggle">
                         <i class="icon-link"></i>
-                        <span class="menu-text">Relacions </span>
+                        <span class="menu-text"> Relacions </span>
 
                         <b class="arrow icon-angle-down"></b>
                     </a>
@@ -297,18 +375,20 @@
                                 Llistar
                             </a>
                         </li>
+
                         <li>
-                            <a href="buttons.html">
+                            <a href="treeview.html">
                                 <i class="icon-double-angle-right"></i>
                                 Esborrar
                             </a>
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="#" class="dropdown-toggle">
-                        <i class="icon-calendar"></i>
-                        <span class="menu-text">Tasques </span>
+                        <i class="icon-tasks"></i>
+                        <span class="menu-text"> Tasques </span>
 
                         <b class="arrow icon-angle-down"></b>
                     </a>
@@ -327,18 +407,20 @@
                                 Llistar
                             </a>
                         </li>
+
                         <li>
-                            <a href="buttons.html">
+                            <a href="treeview.html">
                                 <i class="icon-double-angle-right"></i>
                                 Esborrar
                             </a>
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="#" class="dropdown-toggle">
                         <i class="icon-bullhorn"></i>
-                        <span class="menu-text">Incidències </span>
+                        <span class="menu-text"> Incidències </span>
 
                         <b class="arrow icon-angle-down"></b>
                     </a>
@@ -357,67 +439,23 @@
                                 Llistar
                             </a>
                         </li>
+
                         <li>
-                            <a href="buttons.html">
+                            <a href="treeview.html">
                                 <i class="icon-double-angle-right"></i>
                                 Esborrar
                             </a>
                         </li>
                     </ul>
                 </li>
-            </ul>
+
+            </ul><!-- /.nav-list -->
+
             <div class="sidebar-collapse" id="sidebar-collapse">
-                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
-                   data-icon2="icon-double-angle-right"></i>
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
             </div>
 
             <script type="text/javascript">
-                try {
-                    ace.settings.check('sidebar', 'collapsed')
-                } catch (e) {
-                }
+                try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
             </script>
         </div>
-
-        <div class="main-content">
-            <div class="breadcrumbs" id="breadcrumbs">
-                <script type="text/javascript">
-                    try {
-                        ace.settings.check('breadcrumbs', 'fixed')
-                    } catch (e) {
-                    }
-                </script>
-
-                <ul class="breadcrumb">
-                    <li>
-                        <i class="icon-home home-icon"></i>
-                        <a href="#">AQUI VAN ELS BREADCRUMB</a>
-                    </li>
-                </ul>
-                <!-- .breadcrumb -->
-            </div>
-
-            <div class="page-content">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- PAGE CONTENT BEGINS -->
-
-                        <!-- PAGE CONTENT ENDS -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.page-content -->
-        </div>
-        <!-- /.main-content -->
-    </div>
-    <!-- /.main-container-inner -->
-</div>
-<!-- /.main-container -->
-
-
-
-
-</body>
-</html>
