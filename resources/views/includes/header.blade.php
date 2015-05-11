@@ -23,8 +23,9 @@
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<span class="user-info">
-									<small>Benvingut,</small>
+									<small>Benvingut</small>
 
+                                    {{ Auth::user()->name }}
 								</span>
                         <i class="icon-caret-down"></i>
                     </a>
@@ -47,7 +48,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="logout">
                                 <i class="icon-off"></i>
                                 Logout
                             </a>

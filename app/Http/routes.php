@@ -10,96 +10,112 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function() {
-    return View::make('pages.home');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+Route::get('register', function() {
+    return View::make('auth.register');
 });
 
-Route::get('home', function() {
-    return View::make('pages.home');
+Route::get('logout', function() {
+    return View::make('auth.logout');
 });
 
-Route::get('inici', function() {
-    return View::make('pages.home');
+Route::get('password', function() {
+    return View::make('auth.password');
 });
+
+Route::get('reset', function() {
+    return View::make('auth.reset');
+});
+
+
+//Totes les routes que estiguin aqui dintre requeriran estar loguejat per poder entrar.
+Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
+
+
+    Route::get('/', function() {
+        return View::make('pages.home');
+    });
+
+    Route::get('home', function() {
+        return View::make('pages.home');
+    });
+
+    Route::get('inici', function() {
+        return View::make('pages.home');
+    });
 
 //TREBALLADORS
-Route::get('creartreballador', function() {
-    return View::make('treballadors.creartreballador');
-});
+    Route::get('creartreballador', function() {
+        return View::make('treballadors.creartreballador');
+    });
 
-Route::get('llistartreballador', function() {
-    return View::make('treballadors.llistartreballador');
-});
+    Route::get('llistartreballador', function() {
+        return View::make('treballadors.llistartreballador');
+    });
 
-Route::get('esborrartreballador', function() {
-    return View::make('treballadors.esborrartreballador');
-});
+    Route::get('esborrartreballador', function() {
+        return View::make('treballadors.esborrartreballador');
+    });
 
 //CLIENTS
-Route::get('crearclient', function() {
-    return View::make('clients.crearclient');
-});
+    Route::get('crearclient', function() {
+        return View::make('clients.crearclient');
+    });
 
-Route::get('llistarclient', function() {
-    return View::make('clients.llistarclient');
-});
+    Route::get('llistarclient', function() {
+        return View::make('clients.llistarclient');
+    });
 
-Route::get('esborrarclient', function() {
-    return View::make('clients.esborrarclient');
-});
+    Route::get('esborrarclient', function() {
+        return View::make('clients.esborrarclient');
+    });
 
 
 //RELACIONS
-Route::get('crearrelacio', function() {
-    return View::make('relacions.crearrelacio');
-});
+    Route::get('crearrelacio', function() {
+        return View::make('relacions.crearrelacio');
+    });
 
-Route::get('llistarrelacio', function() {
-    return View::make('relacions.llistarrelacio');
-});
+    Route::get('llistarrelacio', function() {
+        return View::make('relacions.llistarrelacio');
+    });
 
-Route::get('esborrarrelacio', function() {
-    return View::make('relacions.esborrarrelacio');
-});
+    Route::get('esborrarrelacio', function() {
+        return View::make('relacions.esborrarrelacio');
+    });
 
 
 //TASQUES
-Route::get('creartasca', function() {
-    return View::make('tasques.creartasca');
-});
+    Route::get('creartasca', function() {
+        return View::make('tasques.creartasca');
+    });
 
-Route::get('llistartasca', function() {
-    return View::make('tasques.llistartasca');
-});
+    Route::get('llistartasca', function() {
+        return View::make('tasques.llistartasca');
+    });
 
-Route::get('esborrartasca', function() {
-    return View::make('tasques.esborrartasca');
-});
+    Route::get('esborrartasca', function() {
+        return View::make('tasques.esborrartasca');
+    });
 
 
 //INCIDENCIES
-Route::get('crearincidencia', function() {
-    return View::make('incidencies.crearincidencia');
+    Route::get('crearincidencia', function() {
+        return View::make('incidencies.crearincidencia');
+    });
+
+    Route::get('llistarincidencia', function() {
+        return View::make('incidencies.llistarincidencia');
+    });
+
+    Route::get('esborrarincidencia', function() {
+        return View::make('incidencies.esborrarincidencia');
+    });
+
+
 });
-
-Route::get('llistarincidencia', function() {
-    return View::make('incidencies.llistarincidencia');
-});
-
-Route::get('esborrarincidencia', function() {
-    return View::make('incidencies.esborrarincidencia');
-});
-
-
-
-
-/*
-Route::get('/', 'HomeController@index');
-
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-*/

@@ -9,7 +9,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="icon-home home-icon"></i>
-                    <a href="#">Home</a>
+                    <a href="home">Home</a>
                 </li>
 
                 <li>
