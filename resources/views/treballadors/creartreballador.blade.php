@@ -25,7 +25,66 @@
         <div class="row">
             <div class="col-xs-12">
                 <!-- PAGE CONTENT BEGINS -->
-creartreballador funciona
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/treballadors/creartreballador') }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Nom</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="nom">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Cognom</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="cognom">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">DNI</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="dni">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Data de naixement</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="datanaixement">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">E-Mail</label>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Password</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Confirmar Password</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password_confirmation">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <a class="btn btn-link" href="register">Registrar</a>
+                        </div>
+                    </div>
+
+                </form>
                 <!-- PAGE CONTENT ENDS -->
             </div><!-- /.col -->
         </div><!-- /.row -->
