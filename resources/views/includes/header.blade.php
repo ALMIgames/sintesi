@@ -24,8 +24,13 @@
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<span class="user-info">
 									<small>Benvingut</small>
+                                    <?php if (Auth::check() == true){?>
+                                        {{ Auth::user()->name }}
+                                    <?php }
+                                    else {
+                                        echo 'usuari';
+                                    }?>
 
-                                    {{ Auth::user()->name }}
 								</span>
                         <i class="icon-caret-down"></i>
                     </a>
