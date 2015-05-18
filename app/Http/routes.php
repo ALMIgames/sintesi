@@ -20,9 +20,6 @@ Route::get('register', function() {
     return View::make('auth.register');
 });
 
-Route::get('logout', function() {
-    return View::make('auth.logout');
-});
 
 Route::get('password', function() {
     return View::make('auth.password');
@@ -32,6 +29,9 @@ Route::get('reset', function() {
     return View::make('auth.reset');
 });
 
+Route::get('vistarafa', function() {
+    return View::make('vistarafa');
+});
 
 //Totes les routes que estiguin aqui dintre requeriran estar loguejat per poder entrar.
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     });
 
 //TREBALLADORS
-    Route::get('creartreballador', function() {
+    Route::any('creartreballador', function() {
         return View::make('treballadors.creartreballador');
     });
 

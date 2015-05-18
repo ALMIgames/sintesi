@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Worker;
+
 class Treballadors extends Controller
 {
 
@@ -34,8 +36,20 @@ class Treballadors extends Controller
         return view('home');
     }
 
-    public function creartreballador()
-    {
-    }
+    public function creartreballador(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'nom' => 'required',
+            'cognom' => 'required',
+            'dni' => 'required',
+            'datanaixement' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
+        if ($validator->fails()) {
+            return redirect('treballadors/creartreballadors')
+                ->withErrors($validator->errors()->all())
+                ->withInput();
+        }
+    }
 }

@@ -53,7 +53,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="logout">
+                            <a href="{{ ('/auth/logout') }}">
                                 <i class="icon-off"></i>
                                 Logout
                             </a>

@@ -6,7 +6,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class Worker extends Model implements AuthenticatableContract, CanResetPasswordContract {
+class Worker extends Eloquent{
 
     use Authenticatable, CanResetPassword;
 
@@ -29,6 +29,5 @@ class Worker extends Model implements AuthenticatableContract, CanResetPasswordC
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
 
 }
