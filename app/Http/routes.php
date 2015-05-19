@@ -29,9 +29,6 @@ Route::get('reset', function() {
     return View::make('auth.reset');
 });
 
-Route::get('vistarafa', function() {
-    return View::make('vistarafa');
-});
 
 //Totes les routes que estiguin aqui dintre requeriran estar loguejat per poder entrar.
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
@@ -50,7 +47,9 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     });
 
 //TREBALLADORS
-    Route::any('creartreballador', function() {
+    Route::post('creartreballador','Treballadors@creartreballador');
+
+    Route::get('creartreballador', function() {
         return View::make('treballadors.creartreballador');
     });
 

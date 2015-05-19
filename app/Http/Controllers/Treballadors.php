@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactFormRequest;
 use App\Worker;
 
 class Treballadors extends Controller
@@ -36,20 +37,33 @@ class Treballadors extends Controller
         return view('home');
     }
 
-    public function creartreballador(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'nom' => 'required',
-            'cognom' => 'required',
+    public function creartreballador(ContactFormRequest $request)
+    {
+
+        $data = Input::all();
+
+        $rules = array(
+            'name' => 'required',
+            'lastname' => 'required',
             'dni' => 'required',
-            'datanaixement' => 'required',
+            'birthdate' => 'required',
             'email' => 'required',
             'password' => 'required',
-        ]);
+        );
+        $validator = Validator::make($data, $rules);
 
-        if ($validator->fails()) {
-            return redirect('treballadors/creartreballadors')
-                ->withErrors($validator->errors()->all())
-                ->withInput();
+        if ($validator->passes()) {
+
+            DB::insert('insert into workers (name, lastname, dni, birthdate, email, password)
+              values ($name, $lastname, $dni, $birthdate, $email, $password)');
+
+
+            return Redirect::route('home')
+                ->with('message', 'Treballador creat correctament.');
+        } else {
+
+            return Redirect::route('home')
+                ->with('error', 'Hi ha agut algun problema creant el treballador. Torna-ho a provar.');
         }
     }
 }

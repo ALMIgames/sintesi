@@ -30,79 +30,68 @@
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
 
-                    <form class="form-horizontal" role="form" method="POST"
-                          action="{{ url('/treballadors/creartreballador') }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Nom</label>
+                    {!! Form::open(array('action' => 'Treballadors@creartreballador', 'class' => 'form')) !!}
 
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="nom">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        {!! Form::label('Nom') !!}
+                        {!! Form::text('name', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'Nom')) !!}
+                    </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Cognom</label>
+                    <div class="form-group">
+                        {!! Form::label('Cognom') !!}
+                        {!! Form::text('lastname', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'Cognom')) !!}
+                    </div>
 
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="cognom">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        {!! Form::label('DNI') !!}
+                        {!! Form::text('dni', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'DNI')) !!}
+                    </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">DNI</label>
+                    <div class="form-group">
+                        {!! Form::label('Data de naixement') !!}
+                        {!! Form::text('birthdate', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'Data de naixement')) !!}
+                    </div>
 
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="dni">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        {!! Form::label('Email') !!}
+                        {!! Form::text('email', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'Email')) !!}
+                    </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Data de naixement</label>
+                    <div class="form-group">
+                        {!! Form::label('Password') !!}
+                        {!! Form::password('password', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'Password')) !!}
+                    </div>
 
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="datanaixement">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">E-Mail</label>
-
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" name="email">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Confirmar Password</label>
-
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password_confirmation">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">
-                                {!! Form::submit() !!}
-                            </div>
-                        </div>
-                    </form>
-                    <!-- PAGE CONTENT ENDS -->
-                </div>
-                <!-- /.col -->
+                    <div class="form-group">
+                        {!! Form::submit('Crear treballador',
+                        array('class'=>'btn btn-primary')) !!}
+                    </div>
+                    {!! Form::close() !!}
+                <!-- PAGE CONTENT ENDS -->
             </div>
-            <!-- /.row -->
+            <!-- /.col -->
         </div>
-        <!-- /.page-content -->
+        <!-- /.row -->
+    </div>
+    <!-- /.page-content -->
     </div><!-- /.main-content -->
 @stop
