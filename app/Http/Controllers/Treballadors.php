@@ -82,8 +82,9 @@ class Treballadors extends Controller
         }
     }
 
-    public function correcte()
+    public function llistartreballador()
     {
-        return Redirect::to('llistatreballador');
+        $treballador = new Worker();
+        $treballador->get();
     }
 }

@@ -55,7 +55,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     });
 
     Route::get('llistartreballador', function() {
-        return View::make('treballadors.llistartreballador');
+        return View::make('treballadors.llistartreballador', array('treballador' => 'treballador'));
     });
 
     Route::get('esborrartreballador', function() {
