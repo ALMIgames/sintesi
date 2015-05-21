@@ -2,6 +2,10 @@
 
 use App\Http\Requests\ContactFormRequest;
 use App\Worker;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
+use Hash;
 
 class Treballadors extends Controller
 {
@@ -37,7 +41,7 @@ class Treballadors extends Controller
         return view('home');
     }
 
-    public function creartreballador(ContactFormRequest $request)
+    public function creartreballador()
     {
 
         $data = Input::all();
@@ -52,18 +56,34 @@ class Treballadors extends Controller
         );
         $validator = Validator::make($data, $rules);
 
-        if ($validator->passes()) {
-
-            DB::insert('insert into workers (name, lastname, dni, birthdate, email, password)
-              values ($name, $lastname, $dni, $birthdate, $email, $password)');
+        if ($validator->fails()) {
 
 
-            return Redirect::route('home')
-                ->with('message', 'Treballador creat correctament.');
+
+
+
+            return Redirect::to('creartreballador')
+                ->withInput()->withFlashMessage('Treballador creat incorrectament.');
+
         } else {
+            $treballador = new Worker();
 
-            return Redirect::route('home')
-                ->with('error', 'Hi ha agut algun problema creant el treballador. Torna-ho a provar.');
+            $treballador->name = Input::get('name');
+            $treballador->lastname = Input::get('lastname');
+            $treballador->dni = Input::get('dni');
+            $treballador->birthdate = Input::get('birthdate');
+            $treballador->email = Input::get('email');
+            $treballador->password = Hash::make(Input::get('password'));
+
+            $treballador->save();
+            return Redirect::to('creartreballador')
+                ->withInput()->withFlashMessage('Treballador creat correctament.');
+
         }
+    }
+
+    public function correcte()
+    {
+        return Redirect::to('llistatreballador');
     }
 }

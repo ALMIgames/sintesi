@@ -29,10 +29,11 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
+                    @if (Session::has('flash_message'))
+                        {!! Session::get('flash_message') !!}
+                    @endif
 
-
-                    {!! Form::open(array('action' => 'Treballadors@creartreballador', 'class' => 'form')) !!}
-
+                    {!! Form::open(['url'=>'creartreballadorpost', 'method' => 'post']) !!}
                     <div class="form-group">
                         {!! Form::label('Nom') !!}
                         {!! Form::text('name', null,
@@ -86,12 +87,12 @@
                         array('class'=>'btn btn-primary')) !!}
                     </div>
                     {!! Form::close() !!}
-                <!-- PAGE CONTENT ENDS -->
+                    <!-- PAGE CONTENT ENDS -->
+                </div>
+                <!-- /.col -->
             </div>
-            <!-- /.col -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.page-content -->
+        <!-- /.page-content -->
     </div><!-- /.main-content -->
 @stop

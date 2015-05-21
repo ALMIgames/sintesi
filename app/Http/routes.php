@@ -47,7 +47,8 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     });
 
 //TREBALLADORS
-    Route::post('creartreballador','Treballadors@creartreballador');
+    //Route::post('crearreballador', array('uses' => 'Treballador@correcte'));
+    Route::post('creartreballadorpost','Treballadors@creartreballador');
 
     Route::get('creartreballador', function() {
         return View::make('treballadors.creartreballador');

@@ -6,7 +6,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class Worker extends Eloquent{
+class Worker extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
     use Authenticatable, CanResetPassword;
 
