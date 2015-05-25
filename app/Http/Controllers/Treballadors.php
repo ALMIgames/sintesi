@@ -89,4 +89,10 @@ class Treballadors extends Controller
 
         return View::make('treballadors.llistartreballador', $data);
     }
+
+    public function esborrartreballador($id)
+    {
+        Worker::destroy($id);
+        return Redirect::to('llistartreballador');
+    }
 }

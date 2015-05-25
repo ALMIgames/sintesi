@@ -120,13 +120,6 @@
                                 Llistar
                             </a>
                         </li>
-
-                        <li>
-                            <a href="esborrartreballador">
-                                <i class="icon-double-angle-right"></i>
-                                Esborrar
-                            </a>
-                        </li>
                     </ul>
                 </li>
 
@@ -150,13 +143,6 @@
                             <a href="llistarclient">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="esborrarclient">
-                                <i class="icon-double-angle-right"></i>
-                                Esborrar
                             </a>
                         </li>
                     </ul>
@@ -184,13 +170,6 @@
                                 Llistar
                             </a>
                         </li>
-
-                        <li>
-                            <a href="esborrarrelacio">
-                                <i class="icon-double-angle-right"></i>
-                                Esborrar
-                            </a>
-                        </li>
                     </ul>
                 </li>
 
@@ -216,13 +195,6 @@
                                 Llistar
                             </a>
                         </li>
-
-                        <li>
-                            <a href="esborrartasca">
-                                <i class="icon-double-angle-right"></i>
-                                Esborrar
-                            </a>
-                        </li>
                     </ul>
                 </li>
 
@@ -246,13 +218,6 @@
                             <a href="llistarincidencia">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="esborrarincidencia">
-                                <i class="icon-double-angle-right"></i>
-                                Esborrar
                             </a>
                         </li>
                     </ul>

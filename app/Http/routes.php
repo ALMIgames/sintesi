@@ -56,9 +56,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
 
     Route::get('llistartreballador','Treballadors@llistartreballador');
 
-    Route::get('esborrartreballador', function() {
-        return View::make('treballadors.esborrartreballador');
-    });
+    Route::get('esborrartreballador/{id}','Treballadors@esborrartreballador');
 
 //CLIENTS
     Route::get('crearclient', function() {
