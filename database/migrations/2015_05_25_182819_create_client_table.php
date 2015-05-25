@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorkerTable extends Migration {
+class CreateClientTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class CreateWorkerTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('worker', function(Blueprint $table)
+		Schema::create('client', function(Blueprint $table)
 		{
-			$table->increments('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('lastname');
             $table->string('dni');
@@ -22,8 +22,7 @@ class CreateWorkerTable extends Migration {
             $table->string('location');
             $table->string('email')->unique();
             $table->string('password', 60);
-            $table->integer('tasquescompletes');
-			$table->timestamps();
+            $table->timestamps();
 		});
 	}
 
@@ -34,7 +33,7 @@ class CreateWorkerTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('worker');
+		Schema::drop('client');
 	}
 
 }

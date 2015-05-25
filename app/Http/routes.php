@@ -61,17 +61,18 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     Route::get('veuretreballador/{id}','Treballadors@veuretreballador');
 
 //CLIENTS
+
+    Route::post('crearclientpost','Clients@crearclient');
+
     Route::get('crearclient', function() {
         return View::make('clients.crearclient');
     });
 
-    Route::get('llistarclient', function() {
-        return View::make('clients.llistarclient');
-    });
+    Route::get('llistarclient','Clients@llistarclient');
 
-    Route::get('esborrarclient', function() {
-        return View::make('clients.esborrarclient');
-    });
+    Route::get('esborrarclient/{id}','Clients@esborrarclient');
+
+    Route::get('veureclient/{id}','Clients@veureclient');
 
 
 //RELACIONS

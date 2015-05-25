@@ -16,7 +16,7 @@
                 </li>
 
                 <li>
-                    <a href="#">Treballadors</a>
+                    <a href="#">Clients</a>
                 </li>
                 <li class="active">Detalls</li>
             </ul>
@@ -42,7 +42,7 @@
 
                                     <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                                         <div class="inline position-relative">
-                                            <span class="white">{{$treballador->name}}</span>
+                                            <span class="white">{{$client->name}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -53,14 +53,14 @@
 
                                 <div class="clearfix">
                                     <div class="grid2">
-                                        <span class="bigger-175 blue">{{ $treballador->tasquescompletes }}</span>
+                                        <span class="bigger-175 blue">0</span>
 
                                         <br/>
-                                        Tasques completes
+                                        Tasques creades
                                     </div>
 
                                     <div class="grid2">
-                                        <span class="bigger-175 blue">12</span>
+                                        <span class="bigger-175 blue">0</span>
 
                                         <br/>
                                         Tasques pendents
@@ -77,37 +77,37 @@
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Nom</div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="username">{{ $treballador->name }}</span>
+                                            <span class="editable" id="username">{{ $client->name }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Cognom</div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="username">{{ $treballador->lastname }}</span>
+                                            <span class="editable" id="username">{{ $client->lastname }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Dni</div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="username">{{ $treballador->dni }}</span>
+                                            <span class="editable" id="username">{{ $client->dni }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Localitat</div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="username">{{ $treballador->location }}</span>
+                                            <span class="editable" id="username">{{ $client->location }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Nascut el</div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="username">{{ $treballador->birthdate }}</span>
+                                            <span class="editable" id="username">{{ $client->birthdate }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">E-mail</div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="username">{{ $treballador->email }}</span>
+                                            <span class="editable" id="username">{{ $client->email }}</span>
                                         </div>
                                     </div>
                                 </div>

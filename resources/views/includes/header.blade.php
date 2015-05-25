@@ -133,14 +133,14 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="crearclient">
+                            <a href="/crearclient">
                                 <i class="icon-double-angle-right"></i>
                                 Crear
                             </a>
                         </li>
 
                         <li>
-                            <a href="llistarclient">
+                            <a href="/llistarclient">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
                             </a>

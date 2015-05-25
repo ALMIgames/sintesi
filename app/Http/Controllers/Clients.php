@@ -1,19 +1,19 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactFormRequest;
-use App\Worker;
+use App\Client;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use Hash;
 use View;
 
-class Treballadors extends Controller
+class Clients extends Controller
 {
 
     /*
     |--------------------------------------------------------------------------
-    | Treballadors
+    | Clients
     |--------------------------------------------------------------------------
     |
     | This controller renders your application's "dashboard" for users that
@@ -42,7 +42,7 @@ class Treballadors extends Controller
         return view('home');
     }
 
-    public function creartreballador()
+    public function crearclient()
     {
 
         $data = Input::all();
@@ -59,44 +59,44 @@ class Treballadors extends Controller
 
         if ($validator->fails()) {
 
-            return Redirect::to('creartreballador')
-                ->withInput()->withFlashMessage('Error al crear el treballador.');
+            return Redirect::to('crearclient')
+                ->withInput()->withFlashMessage('Error al crear el client.');
 
         } else {
-            $treballador = new Worker();
+            $client = new Client();
 
-            $treballador->name = Input::get('name');
-            $treballador->lastname = Input::get('lastname');
-            $treballador->dni = Input::get('dni');
-            $treballador->birthdate = Input::get('birthdate');
-            $treballador->email = Input::get('email');
-            $treballador->location = Input::get('location');
-            $treballador->password = Hash::make(Input::get('password'));
+            $client->name = Input::get('name');
+            $client->lastname = Input::get('lastname');
+            $client->dni = Input::get('dni');
+            $client->birthdate = Input::get('birthdate');
+            $client->email = Input::get('email');
+            $client->location = Input::get('location');
+            $client->password = Hash::make(Input::get('password'));
 
-            $treballador->save();
-            return Redirect::to('llistartreballador');
+            $client->save();
+            return Redirect::to('llistarclient');
 
         }
     }
 
-    public function llistartreballador()
+    public function llistarclient()
     {
 
-        $data['treballador'] = Worker::all();
+        $data['client'] = Client::all();
 
-        return View::make('treballadors.llistartreballador', $data);
+        return View::make('clients.llistarclient', $data);
     }
 
-    public function esborrartreballador($id)
+    public function esborrarclient($id)
     {
-        Worker::destroy($id);
-        return Redirect::to('llistartreballador');
+        Client::destroy($id);
+        return Redirect::to('llistarclient');
     }
 
-    public function veuretreballador($id)
+    public function veureclient($id)
     {
-        $data['treballador'] = Worker::find($id);
+        $data['client'] = Client::find($id);
 
-        return View::make('treballadors.veuretreballador', $data);
+        return View::make('clients.veureclient', $data);
     }
 }
