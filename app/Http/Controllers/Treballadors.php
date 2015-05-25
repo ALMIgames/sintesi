@@ -52,8 +52,8 @@ class Treballadors extends Controller
             'lastname' => 'required',
             'dni' => 'required',
             'birthdate' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email|unique:worker',
+            'password' => 'required|min:5',
         );
         $validator = Validator::make($data, $rules);
 
@@ -64,7 +64,7 @@ class Treballadors extends Controller
 
 
             return Redirect::to('creartreballador')
-                ->withInput()->withFlashMessage('Treballador creat incorrectament.');
+                ->withInput()->withFlashMessage('Error al crear el treballador.');
 
         } else {
             $treballador = new Worker();
@@ -74,6 +74,7 @@ class Treballadors extends Controller
             $treballador->dni = Input::get('dni');
             $treballador->birthdate = Input::get('birthdate');
             $treballador->email = Input::get('email');
+            $treballador->location = Input::get('location');
             $treballador->password = Hash::make(Input::get('password'));
 
             $treballador->save();
@@ -94,5 +95,12 @@ class Treballadors extends Controller
     {
         Worker::destroy($id);
         return Redirect::to('llistartreballador');
+    }
+
+    public function veuretreballador($id)
+    {
+        $data['treballador'] = Worker::find($id);
+
+        return View::make('treballadors.veuretreballador', $data);
     }
 }

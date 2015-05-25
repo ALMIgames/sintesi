@@ -47,7 +47,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     });
 
 //TREBALLADORS
-    //Route::post('crearreballador', array('uses' => 'Treballador@correcte'));
+
     Route::post('creartreballadorpost','Treballadors@creartreballador');
 
     Route::get('creartreballador', function() {
@@ -57,6 +57,8 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     Route::get('llistartreballador','Treballadors@llistartreballador');
 
     Route::get('esborrartreballador/{id}','Treballadors@esborrartreballador');
+
+    Route::get('veuretreballador/{id}','Treballadors@veuretreballador');
 
 //CLIENTS
     Route::get('crearclient', function() {

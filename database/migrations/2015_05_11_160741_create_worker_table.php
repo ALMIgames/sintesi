@@ -19,6 +19,7 @@ class CreateWorkerTable extends Migration {
             $table->string('lastname');
             $table->string('dni');
             $table->string('birthdate');
+            $table->string('location');
             $table->string('email')->unique();
             $table->string('password', 60);
 			$table->timestamps();

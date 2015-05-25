@@ -108,14 +108,14 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="creartreballador">
+                            <a href="/creartreballador">
                                 <i class="icon-double-angle-right"></i>
                                 Crear
                             </a>
                         </li>
 
                         <li>
-                            <a href="llistartreballador">
+                            <a href="/llistartreballador">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
                             </a>

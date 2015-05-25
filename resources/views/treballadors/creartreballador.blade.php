@@ -30,7 +30,9 @@
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
                     @if (Session::has('flash_message'))
-                        {!! Session::get('flash_message') !!}
+                        <div style="background-color: #ff0000; text-align: center;">
+                            {!! Session::get('flash_message') !!}
+                        </div>
                     @endif
 
                     {!! Form::open(['url'=>'creartreballadorpost', 'method' => 'post']) !!}
@@ -64,6 +66,14 @@
                         array('required',
                         'class'=>'form-control',
                         'placeholder'=>'Data de naixement')) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('Localitat') !!}
+                        {!! Form::text('location', null,
+                        array('required',
+                        'class'=>'form-control',
+                        'placeholder'=>'location')) !!}
                     </div>
 
                     <div class="form-group">

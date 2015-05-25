@@ -48,61 +48,50 @@
 
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="table-responsive">
-                                        <table id="sample-table-2"
-                                               class="table table-striped table-bordered table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th>Nom</th>
-                                                <th>Cognom</th>
-                                                <th>DNI</th>
-                                                <th>Data de naixement</th>
-                                                <th>e-mail</th>
-                                                <th>Accions</th>
-                                            </tr>
-                                            </thead>
+                            <div class="table-responsive">
+                                <table id="sample-table-2"
+                                       class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Cognom</th>
+                                        <th>e-mail</th>
+                                        <th>Accions</th>
+                                    </tr>
+                                    </thead>
 
-                                            <tbody>
-                                            @foreach($treballador as $t)
-                                                <tr>
-                                                    <td>
-                                                        <?php echo $t->name; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $t->lastname; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $t->dni; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $t->birthdate; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $t->email; ?>
-                                                    </td>
-                                                    <td>
-                                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-                                                            <a class="blue" href="#">
-                                                                <i class="icon-zoom-in bigger-130"></i>
-                                                            </a>
+                                    <tbody>
+                                    @foreach($treballador as $t)
+                                        <tr>
+                                            <td>
+                                                <?php echo $t->name; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $t->lastname; ?>
+                                            </td>
+                                            </td>
+                                            <td>
+                                                <?php echo $t->email; ?>
+                                            </td>
+                                            <td>
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                                    <a class="blue" href="{{url('veuretreballador/'.$t->id)}}">
+                                                        <i class="icon-zoom-in bigger-130"></i>
+                                                    </a>
 
-                                                            <a class="green" href="#">
-                                                                <i class="icon-pencil bigger-130"></i>
-                                                            </a>
+                                                    <a class="green" href="#">
+                                                        <i class="icon-pencil bigger-130"></i>
+                                                    </a>
 
-                                                            <a class="red" href="esborrartreballador/{{$t->id}}">
-                                                                <i class="icon-trash bigger-130"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                                    <a class="red" href="esborrartreballador/{{$t->id}}">
+                                                        <i class="icon-trash bigger-130"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <!-- PAGE CONTENT ENDS -->
