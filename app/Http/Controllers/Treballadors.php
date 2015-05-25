@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use Hash;
+use View;
 
 class Treballadors extends Controller
 {
@@ -76,15 +77,16 @@ class Treballadors extends Controller
             $treballador->password = Hash::make(Input::get('password'));
 
             $treballador->save();
-            return Redirect::to('creartreballador')
-                ->withInput()->withFlashMessage('Treballador creat correctament.');
+            return Redirect::to('llistartreballador');
 
         }
     }
 
     public function llistartreballador()
     {
-        $treballador = new Worker();
-        $treballador->get();
+
+        $data['treballador'] = Worker::all();
+
+        return View::make('treballadors.llistartreballador', $data);
     }
 }
