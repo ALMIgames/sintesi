@@ -3,6 +3,8 @@
 use App\Http\Requests\ContactFormRequest;
 use App\Task;
 use App\User;
+use App\Client;
+use App\Worker;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -81,7 +83,7 @@ class Tasques extends Controller
 
         $data['tasca'] = Task::all();
 
-        return View::make('tascas.llistartasca', $data);
+        return View::make('tasques.llistartasca', $data);
     }
 
     public function esborrartasca($id)
@@ -94,6 +96,10 @@ class Tasques extends Controller
     {
         $data['tasca'] = Task::find($id);
 
-        return View::make('tascas.veuretasca', $data);
+        $data['client'] = Client::where('id', $data['tasca']->id_client)->get();
+
+        $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->get();
+
+        return View::make('tasques.veuretasca', $data);
     }
 }

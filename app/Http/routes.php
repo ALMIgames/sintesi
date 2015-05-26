@@ -104,13 +104,9 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
         return View::make('tasques.creartasca');
     });
 
-    Route::get('llistartasca', function() {
-        return View::make('tasques.llistartasca');
-    });
+    Route::get('llistartasca','Tasques@llistartasca');
 
-    Route::get('esborrartasca', function() {
-        return View::make('tasques.esborrartasca');
-    });
+    Route::get('veuretasca/{id}','Tasques@veuretasca');
 
 
 //INCIDENCIES

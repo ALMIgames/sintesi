@@ -20,7 +20,7 @@ class CreateTasksTable extends Migration {
             $table->string('task');
             $table->integer('id_client');
             $table->integer('id_worker');
-            $table->boolean('complete');
+            $table->integer('complete');
 		});
 	}
 

@@ -84,7 +84,7 @@ class Treballadors extends Controller
             $usu->tipususuari = '2';
 
             $usu->save();
-            
+
             return Redirect::to('llistartreballador');
 
         }
