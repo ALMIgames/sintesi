@@ -2,6 +2,7 @@
 
 use App\Http\Requests\ContactFormRequest;
 use App\Client;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
@@ -71,9 +72,20 @@ class Clients extends Controller
             $client->birthdate = Input::get('birthdate');
             $client->email = Input::get('email');
             $client->location = Input::get('location');
-            $client->password = Hash::make(Input::get('password'));
 
             $client->save();
+
+            $usu = new User();
+
+            $usu->name = Input::get('name');
+            $usu->email = Input::get('email');
+            $usu->password = bcrypt(Input::get('password'));
+			$usu->id_persona = $client->id;
+            $usu->tipususuari = '3';
+
+            $usu->save();
+
+
             return Redirect::to('llistarclient');
 
         }

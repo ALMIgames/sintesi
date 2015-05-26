@@ -2,6 +2,7 @@
 
 use App\Http\Requests\ContactFormRequest;
 use App\Worker;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
@@ -71,9 +72,19 @@ class Treballadors extends Controller
             $treballador->birthdate = Input::get('birthdate');
             $treballador->email = Input::get('email');
             $treballador->location = Input::get('location');
-            $treballador->password = Hash::make(Input::get('password'));
 
             $treballador->save();
+
+            $usu = new User();
+
+            $usu->name = Input::get('name');
+            $usu->email = Input::get('email');
+            $usu->password = bcrypt(Input::get('password'));
+            $usu->id_persona = $treballador->id;
+            $usu->tipususuari = '2';
+
+            $usu->save();
+            
             return Redirect::to('llistartreballador');
 
         }

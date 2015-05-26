@@ -91,7 +91,7 @@
 
             <ul class="nav nav-list">
                 <li>
-                    <a href="inici">
+                    <a href="/inici">
                         <i class="icon-dashboard"></i>
                         <span class="menu-text"> Inici </span>
                     </a>
@@ -158,14 +158,14 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="crearrelacio">
+                            <a href="/crearrelacio">
                                 <i class="icon-double-angle-right"></i>
                                 Crear
                             </a>
                         </li>
 
                         <li>
-                            <a href="llistarrelacio">
+                            <a href="/llistarrelacio">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
                             </a>
@@ -183,14 +183,14 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="creartasca">
+                            <a href="/creartasca">
                                 <i class="icon-double-angle-right"></i>
                                 Crear
                             </a>
                         </li>
 
                         <li>
-                            <a href="llistartasca">
+                            <a href="/llistartasca">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
                             </a>
@@ -208,14 +208,14 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="crearincidencia">
+                            <a href="/crearincidencia">
                                 <i class="icon-double-angle-right"></i>
                                 Crear
                             </a>
                         </li>
 
                         <li>
-                            <a href="llistarincidencia">
+                            <a href="/llistarincidencia">
                                 <i class="icon-double-angle-right"></i>
                                 Llistar
                             </a>

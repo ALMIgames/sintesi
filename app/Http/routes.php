@@ -90,6 +90,16 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
 
 
 //TASQUES
+
+    /*
+    AdminRouter::get('creartasca', function() {
+        return Admin::view('tasques.creartasca');
+    });
+
+    */
+
+    Route::post('creartascapost','Tasques@creartasca');
+
     Route::get('creartasca', function() {
         return View::make('tasques.creartasca');
     });

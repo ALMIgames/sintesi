@@ -21,7 +21,6 @@ class CreateWorkerTable extends Migration {
             $table->string('birthdate');
             $table->string('location');
             $table->string('email')->unique();
-            $table->string('password', 60);
             $table->integer('tasquescompletes');
 			$table->timestamps();
 		});

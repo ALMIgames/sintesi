@@ -136,10 +136,13 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
         'Collective\Html\HtmlServiceProvider',
+        'SleepingOwl\Admin\AdminServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
 
-		/*
-		 * Application Service Providers...
-		 */
+
+        /*
+         * Application Service Providers...
+         */
 		'App\Providers\AppServiceProvider',
 		'App\Providers\BusServiceProvider',
 		'App\Providers\ConfigServiceProvider',
@@ -195,6 +198,14 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
+
+        'Admin'         => 'SleepingOwl\Admin\Admin',
+        'AdminAuth'     => 'SleepingOwl\AdminAuth\Facades\AdminAuth',
+        'AdminRouter'   => 'SleepingOwl\Admin\Facades\AdminRouter',
+        'AssetManager'  => 'SleepingOwl\Admin\AssetManager\AssetManager',
+        'Column'        => 'SleepingOwl\Admin\Columns\Column',
+        'FormItem'      => 'SleepingOwl\Admin\Models\Form\FormItem',
+        'ModelItem'     => 'SleepingOwl\Admin\Models\ModelItem',
 
 	],
 
