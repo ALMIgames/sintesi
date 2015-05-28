@@ -3,10 +3,11 @@
 use App\Http\Requests\ContactFormRequest;
 use App\Worker;
 use App\User;
+use App\Task;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
-use Hash;
+use Hash;usuari
 use View;
 
 class Treballadors extends Controller
@@ -107,6 +108,7 @@ class Treballadors extends Controller
     public function veuretreballador($id)
     {
         $data['treballador'] = Worker::find($id);
+        $data['tasques'] = Task::where('id_worker', $data['treballador']->id)->get();
 
         return View::make('treballadors.veuretreballador', $data);
     }

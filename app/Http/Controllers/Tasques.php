@@ -70,7 +70,8 @@ class Tasques extends Controller
 
             $tasca->resum = Input::get('resum');
             $tasca->task = Input::get('task');
-            $tasca->id_client = Auth::user()->id;
+
+            $tasca->id_client = Auth::user()->id_persona;
 
             $tasca->save();
             return Redirect::to('llistartasca');

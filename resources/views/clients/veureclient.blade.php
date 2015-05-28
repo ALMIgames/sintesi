@@ -53,14 +53,14 @@
 
                                 <div class="clearfix">
                                     <div class="grid2">
-                                        <span class="bigger-175 blue">0</span>
+                                        <span class="bigger-175 blue">{{count($tasques)}}</span>
 
                                         <br/>
                                         Tasques creades
                                     </div>
 
                                     <div class="grid2">
-                                        <span class="bigger-175 blue">0</span>
+                                        <span class="bigger-175 blue">{{$tasquescompletes}}</span>
 
                                         <br/>
                                         Tasques pendents
@@ -127,23 +127,33 @@
                                             <div id="profile-feed-1" class="profile-feed">
 
                                             <!--FOREACH TASCA-->
+                                                @foreach($tasques as $t)
                                                 <div class="profile-activity clearfix">
                                                     <div>
-                                                        <img class="pull-left" alt="Alex Doe's avatar"
-                                                             src="assets/avatars/avatar5.png"/>
-                                                        <a class="user" href="#"> Alex Doe </a>
-                                                        changed his profile photo.
-                                                        <a href="#">Take a look</a>
+                                                        ID #{{$t->id}}.<br>
+                                                        <strong>{{$t->resum}}</strong><br>
+                                                        @if($t->complete == '2')
+                                                            <span class="label label-success arrowed-in arrowed-in-right">Completa</span>
+                                                        @elseif($t->complete == '1')
+                                                            <span class="label label-warning arrowed-in">En procés</span>
+                                                        @elseif($t->complete == '0')
+                                                            <span class="label label-inverse">Incompleta</span>
+                                                        @endif
+                                                        <br>
+                                                        @if($t->id_worker != '0')
 
+                                                                Treballador assignat: <?php echo $t->name; ?>
+
+                                                        @endif
                                                         <div class="time">
                                                             <i class="icon-time bigger-110"></i>
-                                                            an hour ago
+                                                            {{$t->created_at}}
                                                         </div>
                                                     </div>
 
                                                     <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="icon-pencil bigger-125"></i>
+                                                        <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
+                                                            <i class="icon-zoom-in bigger-130"></i>
                                                         </a>
 
                                                         <a href="#" class="red">
@@ -151,6 +161,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             <!--END FOREACH-->
 
 

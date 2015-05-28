@@ -3,11 +3,13 @@
 use App\Http\Requests\ContactFormRequest;
 use App\Client;
 use App\User;
+use App\Task;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use Hash;
 use View;
+
 
 class Clients extends Controller
 {
@@ -108,6 +110,9 @@ class Clients extends Controller
     public function veureclient($id)
     {
         $data['client'] = Client::find($id);
+        $tasques = Task::where('id_client', $data['client']->id);
+        $data['tasques'] = $tasques->get();
+        $data['tasquescompletes'] = $tasques->where('complete', '!=', 2)->count();
 
         return View::make('clients.veureclient', $data);
     }

@@ -147,7 +147,7 @@
                         </li>
                     </ul>
                 </li>
-
+<!--
                 <li>
                     <a href="#" class="dropdown-toggle">
                         <i class="icon-link"></i>
@@ -172,7 +172,7 @@
                         </li>
                     </ul>
                 </li>
-
+-->
                 <li>
                     <a href="#" class="dropdown-toggle">
                         <i class="icon-tasks"></i>
