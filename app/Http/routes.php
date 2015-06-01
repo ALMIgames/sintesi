@@ -107,6 +107,12 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
         return View::make('tasques.creartasca');
     });
 
+    Route::any('asignartasca/{id}','Tasques@asignartasca');
+
+    Route::any('tascaproces/{id}','Tasques@tascaproces');
+
+    Route::any('tascacompleta/{id}','Tasques@tascacompleta');
+
     Route::get('llistartasca','Tasques@llistartasca');
 
     Route::get('veuretasca/{id}','Tasques@veuretasca');

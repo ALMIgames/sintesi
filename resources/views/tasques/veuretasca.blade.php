@@ -33,21 +33,17 @@
                             <h4 class="lighter">Descripció de la tasca</h4>
 
                             <div class="widget-toolbar no-border">
-                                <a href="#" data-action="settings">
-                                    <i class="icon-cog"></i>
-                                </a>
-
-                                <a href="#" data-action="reload">
-                                    <i class="icon-refresh"></i>
-                                </a>
-
-                                <a href="#" data-action="collapse">
-                                    <i class="icon-chevron-up"></i>
-                                </a>
-
-                                <a href="#" data-action="close">
-                                    <i class="icon-remove"></i>
-                                </a>
+                                @if(Auth::user()->tipususuari == '2')
+                                    @if($tasca->id_worker == '0')
+                                        <a href="{{url('/asignartasca/'.$tasca->id)}}">
+                                            {!! Form::submit('Autoassignar tasca',
+                                            array('class'=>'btn btn-primary')) !!}
+                                        </a>
+                                    @else
+                                            {!! Form::submit('Autoassignar tasca',
+                                            array('class'=>'btn btn-grey', 'disabled' => 'disabled')) !!}
+                                    @endif
+                                @endif
                             </div>
                         </div>
                         <div class="widget-body">

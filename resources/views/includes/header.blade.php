@@ -85,14 +85,22 @@
 
 
             <ul class="nav nav-list">
-                <li>
-                    <a href="/inici">
-                        <i class="icon-dashboard"></i>
-                        <span class="menu-text"> Inici </span>
-                    </a>
-                </li>
+                @if (Auth::check() == false)
+                    <li>
+                        <a href="/inici">
+                            <i class="icon-long-arrow-right"></i>
+                            <span class="menu-text"> Log-in </span>
+                        </a>
+                    </li>
+                @endif
 
                 @if (Auth::check() == true)
+                    <li>
+                        <a href="/inici">
+                            <i class="icon-dashboard"></i>
+                            <span class="menu-text"> Inici </span>
+                        </a>
+                    </li>
                     @if(Auth::user()->tipususuari != '0')
                         <li>
                             <a href="#" class="dropdown-toggle">

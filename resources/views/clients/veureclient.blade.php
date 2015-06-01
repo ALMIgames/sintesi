@@ -127,39 +127,41 @@
                                             <div id="profile-feed-1" class="profile-feed">
 
                                                 @foreach($tasques as $t)
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        ID #{{$t->id}}.<br>
-                                                        <strong>{{$t->resum}}</strong><br>
-                                                        @if($t->complete == '2')
-                                                            <span class="label label-success arrowed-in arrowed-in-right">Completa</span>
-                                                        @elseif($t->complete == '1')
-                                                            <span class="label label-warning arrowed-in">En procés</span>
-                                                        @elseif($t->complete == '0')
-                                                            <span class="label label-inverse">Incompleta</span>
-                                                        @endif
-                                                        <br>
-                                                        @if($t->id_worker != '0')
+                                                    <div class="profile-activity clearfix">
+                                                        <div>
+                                                            ID #{{$t->id}}.<br>
+                                                            <strong>{{$t->resum}}</strong><br>
+                                                            @if($t->complete == '2')
+                                                                <span class="label label-success arrowed-in arrowed-in-right">Completa</span>
+                                                            @elseif($t->complete == '1')
+                                                                <span class="label label-warning arrowed-in">En procés</span>
+                                                            @elseif($t->complete == '0')
+                                                                <span class="label label-inverse">Incompleta</span>
+                                                            @endif
+                                                            <br>
+                                                            @if($t->id_worker != '0')
 
-                                                                Treballador assignat: <?php echo $t->name; ?>
+                                                                Aquesta tasca ja te un treballador assignat.
+                                                            @else
+                                                                Aquesta tasca encara no te un treballador assignat.
+                                                            @endif
 
-                                                        @endif
-                                                        <div class="time">
-                                                            <i class="icon-time bigger-110"></i>
-                                                            {{$t->created_at}}
+                                                            <div class="time">
+                                                                <i class="icon-time bigger-110"></i>
+                                                                {{$t->created_at}}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tools action-buttons">
+                                                            <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
+                                                                <i class="icon-zoom-in bigger-130"></i>
+                                                            </a>
+
+                                                            <a href="#" class="red">
+                                                                <i class="icon-remove bigger-125"></i>
+                                                            </a>
                                                         </div>
                                                     </div>
-
-                                                    <div class="tools action-buttons">
-                                                        <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
-                                                            <i class="icon-zoom-in bigger-130"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="icon-remove bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
                                                 @endforeach
 
                                             </div>

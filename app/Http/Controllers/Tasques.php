@@ -103,4 +103,58 @@ class Tasques extends Controller
 
         return View::make('tasques.veuretasca', $data);
     }
+
+    public function asignartasca($id)
+    {
+        $tasca = Task::find($id);
+
+        $treballador = Worker::where('id', Auth::user()->id_persona)->first();
+
+        if ($tasca->id_worker == '0') {
+
+            $tasca->id_worker = $treballador->id;
+
+            $tasca->update();
+        }
+
+
+        return Redirect::to('llistartasca');
+    }
+
+    public function tascaproces($id)
+    {
+        $tasca = Task::find($id);
+
+        $tasca->complete = '1';
+
+        $tasca->update();
+
+
+        $data['tasca'] = Task::find($id);
+
+        $data['client'] = Client::where('id', $data['tasca']->id_client)->get();
+
+        $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->get();
+
+        return View::make('tasques.veuretasca', $data);
+    }
+
+
+    public function tascacompleta($id)
+    {
+        $tasca = Task::find($id);
+
+        $tasca->complete = '2';
+
+        $tasca->update();
+
+
+        $data['tasca'] = Task::find($id);
+
+        $data['client'] = Client::where('id', $data['tasca']->id_client)->get();
+
+        $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->get();
+
+        return View::make('tasques.veuretasca', $data);
+    }
 }

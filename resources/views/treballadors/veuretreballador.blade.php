@@ -139,6 +139,7 @@
                                                                 <span class="label label-inverse">Incompleta</span>
                                                             @endif
                                                             <br>
+
                                                             <div class="time">
                                                                 <i class="icon-time bigger-110"></i>
                                                                 {{$t->created_at}}
@@ -149,10 +150,16 @@
                                                             <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
                                                                 <i class="icon-zoom-in bigger-130"></i>
                                                             </a>
-
-                                                            <a href="#" class="red">
-                                                                <i class="icon-remove bigger-125"></i>
-                                                            </a>
+                                                            @if($t->complete == 0)
+                                                                <a href="{{url('tascaproces/'.$t->id)}}" class="orange">
+                                                                    <i class="icon-chevron-sign-up bigger-125"></i>
+                                                                </a>
+                                                            @endif
+                                                            @if($t->complete == 1 or $t->complete == 0)
+                                                                <a href="{{url('tascacompleta/'.$t->id)}}" class="green">
+                                                                    <i class="icon-chevron-sign-up bigger-125"></i>
+                                                                </a>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 @endforeach
