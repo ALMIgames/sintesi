@@ -33,6 +33,9 @@ Route::get('reset', function() {
 //Totes les routes que estiguin aqui dintre requeriran estar loguejat per poder entrar.
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
 
+    Route::get('veureusuari', function() {
+        return View::make('usuari.veureusuari');
+    });
 
     Route::get('/', function() {
         return View::make('pages.home');

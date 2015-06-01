@@ -60,7 +60,7 @@
                                     </div>
 
                                     <div class="grid2">
-                                        <span class="bigger-175 blue">12</span>
+                                        <span class="bigger-175 blue">{{$tasquesincompletes}}</span>
 
                                         <br/>
                                         Tasques pendents
@@ -126,32 +126,36 @@
                                         <div class="widget-main padding-8">
                                             <div id="profile-feed-1" class="profile-feed">
 
-                                            <!--FOREACH TASCA-->
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <img class="pull-left" alt="Alex Doe's avatar"
-                                                             src="assets/avatars/avatar5.png"/>
-                                                        <a class="user" href="#"> Alex Doe </a>
-                                                        changed his profile photo.
-                                                        <a href="#">Take a look</a>
+                                                @foreach($tasques as $t)
+                                                    <div class="profile-activity clearfix">
+                                                        <div>
+                                                            ID #{{$t->id}}.<br>
+                                                            <strong>{{$t->resum}}</strong><br>
+                                                            @if($t->complete == '2')
+                                                                <span class="label label-success arrowed-in arrowed-in-right">Completa</span>
+                                                            @elseif($t->complete == '1')
+                                                                <span class="label label-warning arrowed-in">En procés</span>
+                                                            @elseif($t->complete == '0')
+                                                                <span class="label label-inverse">Incompleta</span>
+                                                            @endif
+                                                            <br>
+                                                            <div class="time">
+                                                                <i class="icon-time bigger-110"></i>
+                                                                {{$t->created_at}}
+                                                            </div>
+                                                        </div>
 
-                                                        <div class="time">
-                                                            <i class="icon-time bigger-110"></i>
-                                                            an hour ago
+                                                        <div class="tools action-buttons">
+                                                            <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
+                                                                <i class="icon-zoom-in bigger-130"></i>
+                                                            </a>
+
+                                                            <a href="#" class="red">
+                                                                <i class="icon-remove bigger-125"></i>
+                                                            </a>
                                                         </div>
                                                     </div>
-
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="icon-pencil bigger-125"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="icon-remove bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            <!--END FOREACH-->
+                                                @endforeach
 
 
                                             </div>

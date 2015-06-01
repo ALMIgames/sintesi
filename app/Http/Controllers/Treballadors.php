@@ -7,7 +7,7 @@ use App\Task;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
-use Hash;usuari
+use Hash;
 use View;
 
 class Treballadors extends Controller
@@ -108,7 +108,9 @@ class Treballadors extends Controller
     public function veuretreballador($id)
     {
         $data['treballador'] = Worker::find($id);
-        $data['tasques'] = Task::where('id_worker', $data['treballador']->id)->get();
+        $tasques = Task::where('id_worker', $data['treballador']->id);
+        $data['tasques'] = $tasques->get();
+        $data['tasquesincompletes'] = $tasques->where('complete', '!=', 2)->count();
 
         return View::make('treballadors.veuretreballador', $data);
     }

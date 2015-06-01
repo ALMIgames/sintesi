@@ -126,7 +126,6 @@
                                         <div class="widget-main padding-8">
                                             <div id="profile-feed-1" class="profile-feed">
 
-                                            <!--FOREACH TASCA-->
                                                 @foreach($tasques as $t)
                                                 <div class="profile-activity clearfix">
                                                     <div>
@@ -162,8 +161,6 @@
                                                     </div>
                                                 </div>
                                                 @endforeach
-                                            <!--END FOREACH-->
-
 
                                             </div>
                                         </div>
