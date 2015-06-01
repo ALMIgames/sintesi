@@ -78,28 +78,8 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     Route::get('veureclient/{id}','Clients@veureclient');
 
 
-//RELACIONS
-    Route::get('crearrelacio', function() {
-        return View::make('relacions.crearrelacio');
-    });
-
-    Route::get('llistarrelacio', function() {
-        return View::make('relacions.llistarrelacio');
-    });
-
-    Route::get('esborrarrelacio', function() {
-        return View::make('relacions.esborrarrelacio');
-    });
-
-
 //TASQUES
 
-    /*
-    AdminRouter::get('creartasca', function() {
-        return Admin::view('tasques.creartasca');
-    });
-
-    */
 
     Route::post('creartascapost','Tasques@creartasca');
 
@@ -116,6 +96,8 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
     Route::get('llistartasca','Tasques@llistartasca');
 
     Route::get('veuretasca/{id}','Tasques@veuretasca');
+
+    Route::get('esborrartasca/{id}','Tasques@esborrartasca');
 
 
 //INCIDENCIES
