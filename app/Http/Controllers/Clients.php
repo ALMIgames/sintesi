@@ -103,6 +103,9 @@ class Clients extends Controller
 
     public function esborrarclient($id)
     {
+        $usu = User::where('id_persona', $id)->first();
+        $usu->delete();
+
         Client::destroy($id);
         return Redirect::to('llistarclient');
     }
@@ -112,7 +115,7 @@ class Clients extends Controller
         $data['client'] = Client::find($id);
         $tasques = Task::where('id_client', $data['client']->id);
         $data['tasques'] = $tasques->get();
-        $data['tasquescompletes'] = $tasques->where('complete', '==', 2)->count();
+        $data['tasquescompletes'] = $tasques->where('complete', '!=', 2)->count();
 
         return View::make('clients.veureclient', $data);
     }

@@ -101,6 +101,9 @@ class Treballadors extends Controller
 
     public function esborrartreballador($id)
     {
+        $usu = User::where('id_persona', $id)->first();
+        $usu->delete();
+
         Worker::destroy($id);
         return Redirect::to('llistartreballador');
     }
