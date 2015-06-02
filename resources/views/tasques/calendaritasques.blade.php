@@ -3,7 +3,10 @@
     <div class="main-content">
         <div class="breadcrumbs" id="breadcrumbs">
             <script type="text/javascript">
-                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
             </script>
 
             <ul class="breadcrumb">
@@ -12,23 +15,23 @@
                     <a href="home">Home</a>
                 </li>
 
-                <li>
-                    <a href="#">Relacions</a>
-                </li>
-                <li class="active">Esborrar</li>
-            </ul><!-- .breadcrumb -->
-
-
+                <li class="active">Calendari</li>
+            </ul>
+            <!-- .breadcrumb -->
         </div>
-
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    Esborrarrelacio
+                    <div class="row">
+                        <!--<div id="calendar"></div>-->
+                    </div>
                     <!-- PAGE CONTENT ENDS -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.page-content -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.page-content -->
     </div><!-- /.main-content -->
 @stop

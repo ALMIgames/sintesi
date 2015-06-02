@@ -74,15 +74,32 @@
                                         <div class="profile-info-name">Rol:</div>
                                         <div class="profile-info-value">
                                             @if(Auth::user()->tipususuari == '1')
-                                            Administrador
+                                                Administrador
                                             @elseif(Auth::user()->tipususuari == '2')
-                                            Treballador
+                                                Treballador
                                             @elseif(Auth::user()->tipususuari == '3')
-                                            Client
+                                                Client
                                             @endif
                                         </div>
                                     </div>
-                                    <!--
+                                    <div class="profile-info-row">
+                                        @if(Auth::user()->tipususuari == 2)
+                                            <div class="profile-info-name">Perfil de treballador</div>
+                                            <div class="profile-info-value">
+                                                    <a class="blue" href="{{url('veuretreballador/'.$treballador->id)}}">
+                                                        <i class="icon-zoom-in bigger-60">Perfil</i>
+                                                    </a>
+                                            </div>
+                                        @elseif(Auth::user()->tipususuari == 3)
+                                            <div class="profile-info-name">Perfil de client</div>
+                                            <div class="profile-info-value">
+                                                    <a class="blue" href="{{url('veureclient/'.$client->id)}}">
+                                                        <i class="icon-zoom-in bigger-60">Perfil</i>
+                                                    </a>
+                                            </div>
+                                            @endif
+
+                                                    <!--
                                     @if(Auth::user()->tipususuari != '1')
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Veure el perfil complet:</div>
@@ -94,23 +111,23 @@
                                             <a class="blue"
                                                href="{{url('veureclient/'. Auth::user()->id_persona)}}"></a>
                                             @endif
-                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                                    -->
                                     </div>
-                                    @endif
-                                            -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- PAGE CONTENT ENDS -->
+                    <!-- PAGE CONTENT ENDS -->
+                </div>
+                <!-- /.col -->
             </div>
-            <!-- /.col -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.page-content -->
+        <!-- /.page-content -->
     </div>
     <!-- /.main-content -->
 @stop

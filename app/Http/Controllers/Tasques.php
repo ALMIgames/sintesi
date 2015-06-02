@@ -136,7 +136,13 @@ class Tasques extends Controller
 
         $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->get();
 
-        return View::make('tasques.veuretasca', $data);
+        $treballador = Worker::where('id', $data['tasca']->id_worker)->first();
+
+        $treballador->tasquescompletes -= 1;
+
+        $treballador->update();
+
+        return Redirect::to('inici');
     }
 
 
@@ -155,6 +161,12 @@ class Tasques extends Controller
 
         $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->get();
 
-        return View::make('tasques.veuretasca', $data);
+        $treballador = Worker::where('id', $data['tasca']->id_worker)->first();
+
+        $treballador->tasquescompletes += 1;
+
+        $treballador->update();
+
+        return Redirect::to('inici');
     }
 }

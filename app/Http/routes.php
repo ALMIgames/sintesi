@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
@@ -34,7 +23,13 @@ Route::get('reset', function() {
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
 
     Route::get('veureusuari', function() {
-        return View::make('usuari.veureusuari');
+        if(Auth::user()->tipususuari == '3'){
+            $data['client'] = \App\Client::find(Auth::user()->id_persona);
+        }
+        else if(Auth::user()->tipususuari == '2') {
+            $data['treballador'] = \App\Worker::find(Auth::user()->id_persona);
+        }
+        return View::make('usuari.veureusuari', $data);
     });
 
     Route::get('/', function() {
@@ -99,6 +94,9 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
 
     Route::get('esborrartasca/{id}','Tasques@esborrartasca');
 
+    Route::any('calendari', function() {
+        return View::make('tasques.calendaritasques');
+    });
 
 //INCIDENCIES
     Route::get('crearincidencia', function() {

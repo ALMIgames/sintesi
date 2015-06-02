@@ -27,7 +27,7 @@
 
         <div class="page-content">
             <div class="row">
-                    <!-- PAGE CONTENT BEGINS -->
+                <!-- PAGE CONTENT BEGINS -->
 
                 <div class="page-content">
                     <div class="page-header">
@@ -68,14 +68,15 @@
                                                     <a class="blue" href="{{url('veuretreballador/'.$t->id)}}">
                                                         <i class="icon-zoom-in bigger-130"></i>
                                                     </a>
+                                                    @if(($t->id == Auth::user()->id_persona && Auth::user()->tipususuari == 2) or Auth::user()->tipususuari == 1)
+                                                        <a class="green" href="#">
+                                                            <i class="icon-pencil bigger-130"></i>
+                                                        </a>
 
-                                                    <a class="green" href="#">
-                                                        <i class="icon-pencil bigger-130"></i>
-                                                    </a>
-
-                                                    <a class="red" href="esborrartreballador/{{$t->id}}">
-                                                        <i class="icon-trash bigger-130"></i>
-                                                    </a>
+                                                        <a class="red" href="esborrartreballador/{{$t->id}}">
+                                                            <i class="icon-trash bigger-130"></i>
+                                                        </a>
+                                                    @endif
                                                 </div>
                                             </td>
                                         </tr>

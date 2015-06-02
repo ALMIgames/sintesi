@@ -150,6 +150,11 @@
                                                             <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
                                                                 <i class="icon-zoom-in bigger-130"></i>
                                                             </a>
+                                                            @if($t->complete == 2)
+                                                                <a href="{{url('tascaproces/'.$t->id)}}" class="orange">
+                                                                    <i class="icon-chevron-sign-down bigger-125"></i>
+                                                                </a>
+                                                            @endif
                                                             @if($t->complete == 0)
                                                                 <a href="{{url('tascaproces/'.$t->id)}}" class="orange">
                                                                     <i class="icon-chevron-sign-up bigger-125"></i>
@@ -160,6 +165,7 @@
                                                                     <i class="icon-chevron-sign-up bigger-125"></i>
                                                                 </a>
                                                             @endif
+
                                                         </div>
                                                     </div>
                                                 @endforeach

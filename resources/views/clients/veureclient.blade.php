@@ -156,7 +156,7 @@
                                                             <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
                                                                 <i class="icon-zoom-in bigger-130"></i>
                                                             </a>
-                                                            @if($t->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 3)
+                                                            @if($t->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 3 && $t->complete == '0')
                                                                 <a class="red" href="/esborrartasca/{{$t->id}}">
                                                                     <i class="icon-trash bigger-130"></i>
                                                                 </a>

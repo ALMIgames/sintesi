@@ -46,6 +46,7 @@
                                         <th>Resum</th>
                                         <th>Data de creació</th>
                                         <th>Estat</th>
+                                        <th>Assignat / No assignat</th>
                                         <th>Accions</th>
                                     </tr>
                                     </thead>
@@ -68,21 +69,32 @@
                                                 @elseif($t->complete == '0')
                                                     <span class="label label-inverse">Incompleta</span>
                                                 @endif
-
+                                            </td>
+                                            <td>
+                                                @if($t->id_worker == '0')
+                                                    <a class="red">
+                                                        <i class="icon-circle bigger-130"></i>
+                                                    </a>
+                                                @else
+                                                    <a class="green">
+                                                        <i class="icon-circle bigger-130"></i>
+                                                    </a>
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
                                                     <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
                                                         <i class="icon-zoom-in bigger-130"></i>
                                                     </a>
-                                                    @if($t->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 3)
+                                                    @if(($t->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 3) or Auth::user()->tipususuari == 1)
                                                         <a class="green" href="#">
                                                             <i class="icon-pencil bigger-130"></i>
                                                         </a>
-
-                                                        <a class="red" href="esborrartasca/{{$t->id}}">
-                                                            <i class="icon-trash bigger-130"></i>
-                                                        </a>
+                                                        @if($t->complete == '0')
+                                                            <a class="red" href="esborrartasca/{{$t->id}}">
+                                                                <i class="icon-trash bigger-130"></i>
+                                                            </a>
+                                                        @endif
                                                     @endif
                                                 </div>
                                             </td>

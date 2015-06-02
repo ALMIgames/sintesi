@@ -155,32 +155,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <!--
-                                        <li>
-                                            <a href="#" class="dropdown-toggle">
-                                                <i class="icon-link"></i>
-                                                <span class="menu-text"> Relacions </span>
-
-                                                <b class="arrow icon-angle-down"></b>
-                                            </a>
-
-                                            <ul class="submenu">
-                                                <li>
-                                                    <a href="/crearrelacio">
-                                                        <i class="icon-double-angle-right"></i>
-                                                        Crear
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="/llistarrelacio">
-                                                        <i class="icon-double-angle-right"></i>
-                                                        Llistar
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                        -->
                         <li>
                             <a href="#" class="dropdown-toggle">
                                 <i class="icon-tasks"></i>
@@ -190,13 +164,14 @@
                             </a>
 
                             <ul class="submenu">
-                                <li>
-                                    <a href="/creartasca">
-                                        <i class="icon-double-angle-right"></i>
-                                        Crear
-                                    </a>
-                                </li>
-
+                                @if(Auth::user()->tipususuari != '2')
+                                    <li>
+                                        <a href="/creartasca">
+                                            <i class="icon-double-angle-right"></i>
+                                            Crear
+                                        </a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="/llistartasca">
                                         <i class="icon-double-angle-right"></i>
@@ -205,7 +180,13 @@
                                 </li>
                             </ul>
                         </li>
-
+                        <li>
+                            <a href="/calendari">
+                                <i class="icon-calendar"></i>
+                                <span class="menu-text"> Calendari </span>
+                            </a>
+                        </li>
+                        <!--
                         <li>
                             <a href="#" class="dropdown-toggle">
                                 <i class="icon-bullhorn"></i>
@@ -230,6 +211,7 @@
                                 </li>
                             </ul>
                         </li>
+                        -->
                     @endif
                 @endif
             </ul>
