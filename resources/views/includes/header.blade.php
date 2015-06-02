@@ -180,13 +180,14 @@
                                 </li>
                             </ul>
                         </li>
+                        <!--
                         <li>
                             <a href="/calendari">
                                 <i class="icon-calendar"></i>
                                 <span class="menu-text"> Calendari </span>
                             </a>
                         </li>
-                        <!--
+
                         <li>
                             <a href="#" class="dropdown-toggle">
                                 <i class="icon-bullhorn"></i>

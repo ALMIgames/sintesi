@@ -40,7 +40,7 @@
                         <div class="col-xs-12">
                             <div class="table-responsive">
                                 <table id="sample-table-2"
-                                       class="table table-striped table-bordered table-hover">
+                                       class="sortable table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
                                         <th>Nom</th>
@@ -69,7 +69,7 @@
                                                         <i class="icon-zoom-in bigger-130"></i>
                                                     </a>
 
-                                                    @if(($c->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 2) or Auth::user()->tipususuari == 1)
+                                                    @if(($c->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 2 && $c->view == 0) or Auth::user()->tipususuari == 1)
                                                         <a class="green" href="#">
                                                             <i class="icon-pencil bigger-130"></i>
                                                         </a>

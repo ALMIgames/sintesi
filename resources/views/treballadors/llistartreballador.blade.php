@@ -40,7 +40,7 @@
                         <div class="col-xs-12">
                             <div class="table-responsive">
                                 <table id="sample-table-2"
-                                       class="table table-striped table-bordered table-hover">
+                                       class="sortable table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
                                         <th>Nom</th>

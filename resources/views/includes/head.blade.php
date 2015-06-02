@@ -25,6 +25,7 @@
 <script src="{{ asset('js/ace.min.js') }}"></script>
 <script src="{{ asset('js/jquery-2.0.3.min.js') }}"></script>
 <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
+<script src="{{ asset('js/sorttable.js') }}"></script>
 
 <script type="text/javascript">
     jQuery(function ($) {
