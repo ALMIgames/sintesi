@@ -23,6 +23,7 @@ Route::get('reset', function() {
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
 
     Route::get('veureusuari', function() {
+        $data = array();
         if(Auth::user()->tipususuari == '3'){
             $data['client'] = \App\Client::find(Auth::user()->id_persona);
         }
