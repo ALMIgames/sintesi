@@ -20,7 +20,27 @@
         <div class="navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
 
+                <li class="green">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="/llistarcorreu">
+
+                        <?php
+                        $mail = Auth::user()->email;
+                        $test = count(\App\Mail::find($mail));
+                        ?>
+
+                        @if($test == 0)
+                            <i class="icon-envelope"></i>
+                        @else
+                            <i class="icon-envelope icon-animated-vertical"></i>
+                        @endif
+
+                        <span class="badge badge-danger"><?php echo $test; ?></span>
+                    </a>
+                </li>
+
+
                 <li class="light-blue">
+
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<span class="user-info">
 									<small>Benvingut</small>
@@ -36,7 +56,6 @@
                     @if (Auth::check() == true)
 
                         <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-
                             <li>
                                 <a href="/veureusuari">
                                     <i class="icon-user"></i>
@@ -180,39 +199,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <!--
-                        <li>
-                            <a href="/calendari">
-                                <i class="icon-calendar"></i>
-                                <span class="menu-text"> Calendari </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="dropdown-toggle">
-                                <i class="icon-bullhorn"></i>
-                                <span class="menu-text"> Incidències </span>
-
-                                <b class="arrow icon-angle-down"></b>
-                            </a>
-
-                            <ul class="submenu">
-                                <li>
-                                    <a href="/crearincidencia">
-                                        <i class="icon-double-angle-right"></i>
-                                        Crear
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="/llistarincidencia">
-                                        <i class="icon-double-angle-right"></i>
-                                        Llistar
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        -->
                     @endif
                 @endif
             </ul>
