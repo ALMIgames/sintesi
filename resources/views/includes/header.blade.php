@@ -20,6 +20,7 @@
         <div class="navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
 
+                @if (Auth::check() == true)
                 <li class="green">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/llistarcorreu">
 
@@ -37,6 +38,7 @@
                         <span class="badge badge-danger"><?php echo $test; ?></span>
                     </a>
                 </li>
+                @endif
 
 
                 <li class="light-blue">
