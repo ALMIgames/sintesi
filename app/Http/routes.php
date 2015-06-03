@@ -94,18 +94,12 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
         return View::make('tasques.calendaritasques');
     });
 
-//INCIDENCIES
-    Route::get('crearincidencia', function() {
-        return View::make('incidencies.crearincidencia');
-    });
+//CORREUS
 
-    Route::get('llistarincidencia', function() {
-        return View::make('incidencies.llistarincidencia');
-    });
+    Route::post('enviarcorreupost','Correus@enviarcorreu');
 
-    Route::get('esborrarincidencia', function() {
-        return View::make('incidencies.esborrarincidencia');
+    Route::get('enviarcorreu', function() {
+        return View::make('correus.enviarcorreu');
     });
-
 
 });

@@ -18,7 +18,7 @@ class Tasques extends Controller
 
     /*
     |--------------------------------------------------------------------------
-    | Tascas
+    | Tasques
     |--------------------------------------------------------------------------
     |
     | This controller renders your application's "dashboard" for users that
