@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
             $table->string('resum');
-            $table->string('task');
+            $table->longText('task');
             $table->integer('id_client');
             $table->integer('id_worker');
             $table->integer('complete');
