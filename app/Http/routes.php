@@ -33,41 +33,12 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
         return View::make('usuari.veureusuari', $data);
     });
 
-    Route::get('/', function() {
+    Route::get('/', 'HomeController@index');
 
-        $data = array();
-        $data['treballadors'] = \App\Worker::all();
-        $data['clients'] = \App\Client::all();
-        $tasques = \App\Task::all();
-        $data['tasques'] = \App\Task::all();
-        $data['tasquescompletes'] = $tasques->where('complete', '!=', 2)->count();
+    Route::get('home', 'HomeController@index');
 
-        return View::make('pages.home', $data);
-    });
+    Route::get('inici', 'HomeController@index');
 
-    Route::get('home', function() {
-
-        $data = array();
-        $data['treballadors'] = \App\Worker::all();
-        $data['clients'] = \App\Client::all();
-        $tasques = \App\Task::all();
-        $data['tasques'] = \App\Task::all();
-        $data['tasquescompletes'] = $tasques->where('complete', '!=', 2)->count();
-
-        return View::make('pages.home', $data);
-    });
-
-    Route::get('inici', function() {
-
-        $data = array();
-        $data['treballadors'] = \App\Worker::all();
-        $data['clients'] = \App\Client::all();
-        $tasques = \App\Task::all();
-        $data['tasques'] = \App\Task::all();
-        $data['tasquescompletes'] = $tasques->where('complete', '!=', 2)->count();
-
-        return View::make('pages.home', $data);
-    });
 
 //TREBALLADORS
 
