@@ -53,6 +53,7 @@
                                     <th>Emisor</th>
                                     <th></th>
                                     <th>Receptor</th>
+                                    <th>Assumpte</th>
                                     <th>Data</th>
                                     <th></th>
                                     </thead>
@@ -86,7 +87,15 @@
                                                 @else
                                                     <?php echo $c->mail_to ?>
                                                 @endif
-
+                                            </td>
+                                            <td>
+                                                @if($c->new == '0' and $c->mail_from != $usermail)
+                                                    <strong>
+                                                        <?php echo $c->subject ?>
+                                                    </strong>
+                                                @else
+                                                    <?php echo $c->subject ?>
+                                                @endif
                                             </td>
                                             <td>
                                                 @if($c->new == '0' and $c->mail_from != $usermail)

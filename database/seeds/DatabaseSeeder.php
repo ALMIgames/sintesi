@@ -300,18 +300,40 @@ class MailTableSeeder extends Seeder
     public function run()
     {
         Mail::create([
-            'subject' => 'Missatge seed de admin a treballador 1',
-            'message' => 'Cos del missatge de admin a treballador1',
+            'subject' => 'Missatge seed de treballador 1 a admin',
+            'message' => 'Cos del missatge de treballador 1 a admin',
             'mail_from' => 'treballador1@treballador.com',
             'mail_to' => 'admin@admin.com',
             'thread' => '1',
         ]);
         Mail::create([
-            'subject' => 'Missatge seed de treballador 1 a admin',
-            'message' => 'Cos del missatge de treballador a admin',
+            'subject' => 'Missatge seed de treballador 1 a admin llegit',
+            'message' => 'Cos del missatge de treballador 1 a admin llegit',
+            'mail_from' => 'treballador1@treballador.com',
+            'mail_to' => 'admin@admin.com',
+            'thread' => '2',
+            'new' => '1',
+        ]);
+        Mail::create([
+            'subject' => 'Missatge seed de admin a treballador 1',
+            'message' => 'Cos del missatge de admin a treballador 1',
             'mail_from' => 'admin@admin.com',
             'mail_to' => 'treballador1@treballador.com',
-            'thread' => '2',
+            'thread' => '3',
+        ]);
+        Mail::create([
+            'subject' => 'Missatge seed de treballador 2 a admin',
+            'message' => 'Cos del missatge de treballador 2 a admin',
+            'mail_from' => 'treballador2@treballador.com',
+            'mail_to' => 'admin@admin.com',
+            'thread' => '4',
+        ]);
+        Mail::create([
+            'subject' => 'Missatge seed de treballador 2 a client1',
+            'message' => 'Cos del missatge de treballador a admin',
+            'mail_from' => 'treballador2@treballador.com',
+            'mail_to' => 'client1@client.com',
+            'thread' => '5',
         ]);
     }
 }

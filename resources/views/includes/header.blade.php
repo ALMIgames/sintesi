@@ -21,23 +21,18 @@
             <ul class="nav ace-nav">
 
                 @if (Auth::check() == true)
-                <li class="green">
-                    <a href="{{url('llistarcorreu')}}">
+                    <li class="green">
+                        <a href="{{url('llistarcorreu')}}">
 
-                        <?php
-                        $mail = \App\Mail::where('mail_from', Auth::user()->email)->get();
-                        $test = count($mail);
-                        ?>
+                            @if($mail == 0)
+                                <i class="icon-envelope"></i>
+                            @else
+                                <i class="icon-envelope icon-animated-vertical"></i>
+                            @endif
 
-                        @if($test == 0)
-                            <i class="icon-envelope"></i>
-                        @else
-                            <i class="icon-envelope icon-animated-vertical"></i>
-                        @endif
-
-                        <span class="badge badge-danger"><?php echo $test; ?></span>
-                    </a>
-                </li>
+                            <span class="badge badge-danger"><?php echo $mail; ?></span>
+                        </a>
+                    </li>
                 @endif
 
 

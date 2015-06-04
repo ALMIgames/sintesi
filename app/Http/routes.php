@@ -18,6 +18,14 @@ Route::get('reset', function () {
     return View::make('auth.reset');
 });
 
+View::composer(array('includes.header'), function ($view) {
+
+    if (Auth::check() == true) {
+        $view->with('mail', \App\Mail::where('mail_to', Auth::user()->email)->where('new', 0)->count());
+    }
+
+});
+
 
 //Totes les routes que estiguin aqui dintre requeriran estar loguejat per poder entrar.
 Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function () {
@@ -88,7 +96,6 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function () {
     Route::get('veuretasca/{id}', 'Tasques@veuretasca');
 
     Route::get('esborrartasca/{id}', 'Tasques@esborrartasca');
-
 
 
 //CORREUS
