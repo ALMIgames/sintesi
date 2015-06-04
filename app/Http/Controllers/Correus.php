@@ -85,8 +85,19 @@ class Correus extends Controller
         }
     }
 
-    public function mostrarcorreu()
+    public function mostrarcorreu($id)
     {
+        $mail = new Mail();
+
+        $mail = Mail::find($id);
+        $mail->new = '1';
+        $mail->save();
+
+        $data['correu'] = Mail::find($id);
+
+        return View::make('includes.header', $data);
+        return View::make('correus.mostrarcorreu', $data);
+
         //entres al correu que selecciones. Si aquest no es unic (hi ha mes d'un correu en aquell thread)
         //se mostren tots los del thread en ordre de created_at
     }

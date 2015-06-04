@@ -53,26 +53,45 @@
                                         <tr>
                                             <td>
                                                 @if($c->mail_from == $usermail)
-                                                    <i class="icon-arrow-left" style="color: green"></i>
+                                                    <i class="icon-arrow-left" style="color: red"></i>
                                                 @else($c->mail_to == $usermail)
-                                                    <i class="icon-arrow-right" style="color: red"></i>
+                                                    <i class="icon-arrow-right" style="color: green"></i>
                                                 @endif
                                             </td>
                                             <td>
-                                                <?php echo $c->mail_from ?>
+                                                @if($c->new == '0' and $c->mail_from != $usermail)
+                                                    <strong>
+                                                        <?php echo $c->mail_from ?>
+                                                    </strong>
+                                                @else
+                                                    <?php echo $c->mail_from ?>
+                                                @endif
                                             </td>
                                             <td>
                                                 <i class="icon-arrow-right" style="color: black;"></i>
                                             </td>
                                             <td>
-                                                <?php echo $c->mail_to ?>
+                                                @if($c->new == '0' and $c->mail_from != $usermail)
+                                                    <strong>
+                                                        <?php echo $c->mail_to ?>
+                                                    </strong>
+                                                @else
+                                                    <?php echo $c->mail_to ?>
+                                                @endif
+
                                             </td>
                                             <td>
-                                                <?php echo $c->created_at ?>
+                                                @if($c->new == '0' and $c->mail_from != $usermail)
+                                                    <strong>
+                                                        <?php echo $c->created_at ?>
+                                                    </strong>
+                                                @else
+                                                    <?php echo $c->created_at ?>
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-                                                    <a class="blue" href="{{url('veurecorreu/'.$c->id)}}">
+                                                    <a class="blue" href="{{url('mostrarcorreu/'.$c->id)}}">
                                                         <i class="icon-zoom-in bigger-130"></i>
                                                     </a>
                                                 </div>

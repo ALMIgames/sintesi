@@ -22,7 +22,7 @@
 
                 @if (Auth::check() == true)
                 <li class="green">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="/llistarcorreu">
+                    <a href="{{url('llistarcorreu')}}">
 
                         <?php
                         $mail = \App\Mail::where('mail_from', Auth::user()->email)->get();
