@@ -102,4 +102,6 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function(){
         return View::make('correus.enviarcorreu');
     });
 
+    Route::get('llistarcorreu', 'Correus@llistarcorreu');
+
 });

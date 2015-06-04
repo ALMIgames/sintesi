@@ -3,6 +3,7 @@ use App\User;
 use App\Worker;
 use App\Client;
 use App\Task;
+use App\Mail;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Worker table seeded!');
         $this->call('TaskTableSeeder');
         $this->command->info('Task table seeded!');
-
+        $this->call('MailTableSeeder');
+        $this->command->info('Mail table seeded!');
     }
 }
 
@@ -289,6 +291,27 @@ class TaskTableSeeder extends Seeder
             'id_client' => '5',
             'id_worker' => '3',
             'complete' => '2',
+        ]);
+    }
+}
+
+class MailTableSeeder extends Seeder
+{
+    public function run()
+    {
+        Mail::create([
+            'subject' => 'Missatge seed de admin a treballador 1',
+            'message' => 'Cos del missatge de admin a treballador1',
+            'mail_from' => 'treballador1@treballador.com',
+            'mail_to' => 'admin@admin.com',
+            'thread' => '1',
+        ]);
+        Mail::create([
+            'subject' => 'Missatge seed de treballador 1 a admin',
+            'message' => 'Cos del missatge de treballador a admin',
+            'mail_from' => 'admin@admin.com',
+            'mail_to' => 'treballador1@treballador.com',
+            'thread' => '2',
         ]);
     }
 }

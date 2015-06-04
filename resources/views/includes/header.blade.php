@@ -25,8 +25,8 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/llistarcorreu">
 
                         <?php
-                        $mail = Auth::user()->email;
-                        $test = count(\App\Mail::find($mail));
+                        $mail = \App\Mail::where('mail_from', Auth::user()->email)->get();
+                        $test = count($mail);
                         ?>
 
                         @if($test == 0)

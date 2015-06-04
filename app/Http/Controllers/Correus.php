@@ -91,14 +91,13 @@ class Correus extends Controller
         //se mostren tots los del thread en ordre de created_at
     }
 
-    public function llistarcorreurebut()
+    public function llistarcorreu()
     {
-        //llista dels correus que has rebut.
-    }
+        $data['correus'] = Mail::where('mail_from', Auth::user()->email)->orWhere('mail_to', Auth::user()->email)->get();
+        $data['usermail'] = Auth::user()->email;
 
-    public function llistarcorreuenviat()
-    {
-        //llista dels correus que has enviat..
+        return View::make('correus.llistarcorreu', $data);
+
     }
 
     public function contestarcorreu()
