@@ -2,7 +2,7 @@
 <meta name="description" content="">
 <meta name="author" content="Scotch">
 
-<title>Super Sintesi Mega Guay</title>
+<title>D-ERP</title>
 
 <!-- load bootstrap from a cdn -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">

@@ -11,7 +11,7 @@
             <a href="/home" class="navbar-brand">
                 <small>
                     <i class="icon-code"></i>
-                    Sintesi 2015
+                    D-ERP
                 </small>
             </a><!-- /.brand -->
         </div>
