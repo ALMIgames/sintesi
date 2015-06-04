@@ -89,9 +89,7 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function () {
 
     Route::get('esborrartasca/{id}', 'Tasques@esborrartasca');
 
-    Route::any('calendari', function () {
-        return View::make('tasques.calendaritasques');
-    });
+
 
 //CORREUS
 

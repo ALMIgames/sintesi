@@ -32,10 +32,16 @@ class HomeController extends Controller {
         $data['clients'] = \App\Client::all();
         $tasques = \App\Task::all();
         $data['tasques'] = \App\Task::all();
-        $data['tasquescompletes'] = $tasques->where('complete', 2)->count();
+        $data['tasquescompletes'] = \App\Task::where('complete', 2)->count();
+
         $centpercent = $tasques->count();
-        $percent = $data['tasquescompletes'] / $centpercent;
+        $tasquescompletes = $data['tasquescompletes'];
+        $percent = $tasquescompletes / $centpercent;
         $data['percent'] = $percent*100;
+
+        $data['centpercent'] = $centpercent;
+
+
         $tasquesrestants = $centpercent - $data['tasquescompletes'];
         $data['tasquesrestants'] = $tasquesrestants;
         $data['rank'] = \App\Worker::orderBy('tasquescompletes', 'desc')->get();
