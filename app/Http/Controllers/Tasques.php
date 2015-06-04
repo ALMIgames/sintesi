@@ -4,6 +4,7 @@ use App\Http\Requests\ContactFormRequest;
 use App\Task;
 use App\User;
 use App\Client;
+use App\Mail;
 use App\Worker;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -157,15 +158,33 @@ class Tasques extends Controller
 
         $data['tasca'] = Task::find($id);
 
-        $data['client'] = Client::where('id', $data['tasca']->id_client)->get();
+        $data['client'] = Client::where('id', $data['tasca']->id_client)->first();
 
-        $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->get();
+        $data['treballador'] = Worker::where('id', $data['tasca']->id_worker)->first();
 
         $treballador = Worker::where('id', $data['tasca']->id_worker)->first();
 
         $treballador->tasquescompletes += 1;
 
         $treballador->update();
+
+
+
+        $mail = new Mail();
+
+        $mail->mail_to = $data['client']->email;
+        $mail->subject = 'Avis d\'actualització de la tasca #' . $data['tasca']->id;
+        $mail->message = 'La tasca amb id #' . $data['tasca']->id . ' ha sigut marcada com a completada.';
+        $mail->mail_from = $data['treballador']->email;
+
+        $mail->save();
+
+        $id = $mail->id;
+        $mail = Mail::find($id);
+
+        $mail->update(array("thread" => $id));
+
+
 
         return Redirect::to('inici');
     }
