@@ -105,4 +105,5 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function () {
 
     Route::any('mostrarcorreu/{id}', 'Correus@mostrarcorreu');
 
+
 });

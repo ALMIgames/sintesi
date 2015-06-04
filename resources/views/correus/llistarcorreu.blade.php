@@ -29,10 +29,18 @@
             <div class="row">
                 <!-- PAGE CONTENT BEGINS -->
                 <div class="page-content">
-                    <div class="page-header">
-                        <h1>
-                            Correu
-                        </h1>
+                    <div class="col-xs-12">
+                        <div class="page-header col-xs-10">
+                            <h1>
+                                Correu
+                            </h1>
+                        </div>
+                        <div class="col-xs-2">
+                            <a href="{{url('/enviarcorreu')}}">
+                                {!! Form::submit('Enviar correu',
+                                array('class'=>'btn btn-primary')) !!}
+                            </a>
+                        </div>
                     </div>
 
                     <div class="row">

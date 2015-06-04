@@ -108,9 +108,4 @@ class Correus extends Controller
         return View::make('correus.llistarcorreu', $data);
 
     }
-
-    public function contestarcorreu()
-    {
-        //es com enviarne un pero el numero de thread es igual al del missatge al que contestes
-    }
 }

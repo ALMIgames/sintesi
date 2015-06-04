@@ -48,12 +48,22 @@
                             </h4>
                             <?php echo $correu->subject ?>
                         </div>
+
+                        <div class="hr hr32 hr-dotted"></div>
+
                         <div class="widget-toolbar no-border col-xs-12">
                             <h4 class="lighter" style="color: lightskyblue">
                                 Cos del missatge:
                             </h4>
                             <?php echo $correu->message ?>
                         </div>
+                        <div class="col-xs-12" style="float: right">
+                            <a href="{{url('/contestarcorreu/'.$correu->id)}}">
+                                {!! Form::submit('Contestar',
+                                array('class'=>'btn btn-primary')) !!}
+                            </a>
+                        </div>
+
                     </div>
                     <!-- PAGE CONTENT ENDS -->
                 </div>
