@@ -91,6 +91,57 @@ class Treballadors extends Controller
         }
     }
 
+    public function editartreballador($id)
+    {
+
+        $data = Input::all();
+
+
+
+        $rules = array(
+            'name' => 'required',
+            'lastname' => 'required',
+            'dni' => 'required',
+            'birthdate' => 'required',
+            'email' => 'required|email|unique:worker',
+            'password' => 'required|min:5',
+        );
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+
+            return Redirect::to('editartreballador')
+                ->withInput()->withFlashMessage('Error al crear el treballador.');
+
+        } else {
+            $treballador = Worker::where('id', $id);
+
+            $treballador->id = $id;
+            $treballador->name = Input::get('name');
+            $treballador->lastname = Input::get('lastname');
+            $treballador->dni = Input::get('dni');
+            $treballador->birthdate = Input::get('birthdate');
+            $treballador->email = Input::get('email');
+            $treballador->location = Input::get('location');
+
+            $treballador->update();
+
+            $usu = User::where('tipususuari', 2)->where('idpersona', $id);
+
+            $usu->id = $usu->id;
+            $usu->name = Input::get('name');
+            $usu->email = Input::get('email');
+            $usu->password = bcrypt(Input::get('password'));
+            $usu->id_persona = $treballador->id;
+            $usu->tipususuari = '2';
+
+            $usu->save();
+
+            return Redirect::to('home');
+
+        }
+    }
+
     public function llistartreballador()
     {
 

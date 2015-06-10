@@ -84,37 +84,40 @@
                                     </div>
                                     <div class="profile-info-row">
                                         @if(Auth::user()->tipususuari == 2)
-                                            <div class="profile-info-name">Perfil de treballador</div>
+                                            <div class="profile-info-name">Perfil treballador</div>
                                             <div class="profile-info-value">
-                                                    <a class="blue" href="{{url('veuretreballador/'.$treballador->id)}}">
-                                                        <i class="icon-zoom-in bigger-60">Perfil</i>
-                                                    </a>
+                                                <a class="blue" href="{{url('veuretreballador/'.$treballador->id)}}">
+                                                    <i class="icon-zoom-in bigger-60"> Perfil</i>
+                                                </a>
                                             </div>
                                         @elseif(Auth::user()->tipususuari == 3)
-                                            <div class="profile-info-name">Perfil de client</div>
+                                            <div class="profile-info-name">Perfil client</div>
                                             <div class="profile-info-value">
-                                                    <a class="blue" href="{{url('veureclient/'.$client->id)}}">
-                                                        <i class="icon-zoom-in bigger-60">Perfil</i>
-                                                    </a>
+                                                <a class="blue" href="{{url('veureclient/'.$client->id)}}">
+                                                    <i class="icon-zoom-in bigger-60"> Perfil</i>
+                                                </a>
                                             </div>
-                                            @endif
+                                        @endif
+                                    </div>
 
-                                                    <!--
-                                    @if(Auth::user()->tipususuari != '1')
                                     <div class="profile-info-row">
-                                        <div class="profile-info-name">Veure el perfil complet:</div>
-                                        <div class="profile-info-value">
-                                            @if(Auth::user()->tipususuari == '2')
-                                            <a class="blue"
-                                               href="{{url('veuretreballador/'. Auth::user()->id_persona)}}"></a>
-                                            @elseif(Auth::user()->tipususuari == '3')
-                                            <a class="blue"
-                                               href="{{url('veureclient/'. Auth::user()->id_persona)}}"></a>
-                                            @endif
-                                                    </div>
-                                                </div>
-                                                @endif
-                                                    -->
+                                        @if(Auth::user()->tipususuari == 2)
+                                            <div class="profile-info-name">Editar</div>
+                                            <div class="profile-info-value">
+                                                <a class="green" href="{{url('editartreballador/'.$treballador->id)}}">
+                                                    <i class="icon-pencil bigger-60"> Editar perfil</i>
+                                                </a>
+                                            </div>
+                                        @elseif(Auth::user()->tipususuari == 3)
+                                            <div class="profile-info-name">Editar</div>
+                                            <div class="profile-info-value">
+                                                <a class="green" href="{{url('editarclient/'.$client->id)}}">
+                                                    <i class="icon-pen bigger-60"> Editar perfil</i>
+                                                </a>
+                                            </div>
+                                        @endif
+
+
                                     </div>
                                 </div>
                             </div>

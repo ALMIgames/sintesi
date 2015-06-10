@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration {
             $table->timestamps();
             $table->integer('tipususuari');
             $table->integer('id_persona');
+            $table->integer('privat');
         });
     }
     /**

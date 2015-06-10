@@ -162,7 +162,7 @@
                         <div class="hr hr32 hr-dotted"></div>
 
                         <div class="col-xs-12">
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                 <div class="widget-box transparent">
                                     <div class="widget-header widget-header-flat">
                                         <h4 class="lighter">

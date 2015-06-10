@@ -86,15 +86,13 @@
                                                     <a class="blue" href="{{url('veuretasca/'.$t->id)}}">
                                                         <i class="icon-zoom-in bigger-130"></i>
                                                     </a>
-                                                    @if(($t->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 3) or Auth::user()->tipususuari == 1)
+                                                    @if((($t->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 3) or Auth::user()->tipususuari == 1) and ($t->complete == '0'))
                                                         <a class="green" href="#">
                                                             <i class="icon-pencil bigger-130"></i>
                                                         </a>
-                                                        @if($t->complete == '0')
                                                             <a class="red" href="esborrartasca/{{$t->id}}">
                                                                 <i class="icon-trash bigger-130"></i>
                                                             </a>
-                                                        @endif
                                                     @endif
                                                 </div>
                                             </td>

@@ -101,6 +101,28 @@ class Clients extends Controller
         return View::make('clients.llistarclient', $data);
     }
 
+    public function clientprivat($id)
+    {
+        $client = Client::find($id);
+
+        $client->privat = 1;
+
+        $client->update();
+
+        return Redirect::to('veureclient/'.$id);
+    }
+
+    public function clientpublic($id)
+    {
+        $client = Client::find($id);
+
+        $client->privat = 0;
+
+        $client->update();
+
+        return Redirect::to('veureclient/'.$id);
+    }
+
     public function esborrarclient($id)
     {
         $usu = User::where('id_persona', $id)->first();

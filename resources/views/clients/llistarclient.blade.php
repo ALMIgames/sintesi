@@ -52,35 +52,37 @@
 
                                     <tbody>
                                     @foreach($client as $c)
-                                        <tr>
-                                            <td>
-                                                <?php echo $c->name; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $c->lastname; ?>
-                                            </td>
-                                            </td>
-                                            <td>
-                                                <?php echo $c->email; ?>
-                                            </td>
-                                            <td>
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-                                                    <a class="blue" href="{{url('veureclient/'.$c->id)}}">
-                                                        <i class="icon-zoom-in bigger-130"></i>
-                                                    </a>
-
-                                                    @if(($c->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 2 && $c->view == 0) or Auth::user()->tipususuari == 1)
-                                                        <a class="green" href="#">
-                                                            <i class="icon-pencil bigger-130"></i>
+                                        @if($c->privat == 0 || Auth::user()->tipususuari == 1)
+                                            <tr>
+                                                <td>
+                                                    <?php echo $c->name; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $c->lastname; ?>
+                                                </td>
+                                                </td>
+                                                <td>
+                                                    <?php echo $c->email; ?>
+                                                </td>
+                                                <td>
+                                                    <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                                        <a class="blue" href="{{url('veureclient/'.$c->id)}}">
+                                                            <i class="icon-zoom-in bigger-130"></i>
                                                         </a>
 
-                                                        <a class="red" href="esborrarclient/{{$c->id}}">
-                                                            <i class="icon-trash bigger-130"></i>
-                                                        </a>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                        @if(($c->id_client == Auth::user()->id_persona && Auth::user()->tipususuari == 2 && $c->view == 0) or Auth::user()->tipususuari == 1)
+                                                            <a class="green" href="#">
+                                                                <i class="icon-pencil bigger-130"></i>
+                                                            </a>
+
+                                                            <a class="red" href="esborrarclient/{{$c->id}}">
+                                                                <i class="icon-trash bigger-130"></i>
+                                                            </a>
+                                                        @endif
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endforeach
                                     </tbody>
                                 </table>

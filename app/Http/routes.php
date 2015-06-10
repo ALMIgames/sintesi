@@ -75,6 +75,10 @@ Route::group(['middleware' => 'App\Http\Middleware\Authenticate'], function () {
 
     Route::get('veureclient/{id}', 'Clients@veureclient');
 
+    Route::get('clientprivat/{id}', 'Clients@clientprivat');
+
+    Route::get('clientpublic/{id}', 'Clients@clientpublic');
+
 
 //TASQUES
 

@@ -59,6 +59,7 @@ class ClientTableSeeder extends Seeder
             'birthdate' => '13/12/2010',
             'location' => 'client1location',
             'email' => 'client1@client.com',
+            'privat' => 1
         ]);
         User::create([
             'name' => 'client1',
@@ -66,6 +67,7 @@ class ClientTableSeeder extends Seeder
             'password' => bcrypt('password'),
             'tipususuari' => 3,
             'id_persona' => 1,
+            'privat' => 1
         ]);
 
         Client::create([
@@ -91,6 +93,7 @@ class ClientTableSeeder extends Seeder
             'birthdate' => '13/12/2010',
             'location' => 'client3location',
             'email' => 'client3@client.com',
+            'privat' => 1
         ]);
         User::create([
             'name' => 'client3',
@@ -98,6 +101,7 @@ class ClientTableSeeder extends Seeder
             'password' => bcrypt('password'),
             'tipususuari' => 3,
             'id_persona' => 3,
+            'privat' => 1
         ]);
 
         Client::create([

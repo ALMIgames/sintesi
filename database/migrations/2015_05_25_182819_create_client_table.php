@@ -21,6 +21,7 @@ class CreateClientTable extends Migration {
             $table->string('birthdate');
             $table->string('location');
             $table->string('email')->unique();
+            $table->integer('privat');
             $table->timestamps();
 		});
 	}
