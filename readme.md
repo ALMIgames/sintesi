@@ -1,27 +1,27 @@
-## Laravel PHP Framework
+## D-ERP
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/albertmayor/sintesi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/albertmayor/sintesi/?branch=master)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Code Climate](https://codeclimate.com/github/albertmayor/sintesi/badges/gpa.svg)](https://codeclimate.com/github/albertmayor/sintesi)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+D-ERP es una app web creada per Marc-Albert Mayor Rodriguez per al credit de síntesi del curs de 2DAM 2014-15.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Aquesta app esta programada amb php usant el framework de Laravel.
 
-## Official Documentation
+## Documentació Laravel
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Podem trobar la documentació externa de Laravel al seu [lloc web](http://laravel.com/docs).
 
-## Contributing
+## Scrutinizer
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Link al projecte al Scrutinizer [aquí](https://scrutinizer-ci.com/g/albertmayor/sintesi/)
+## Code Climate
 
-## Security Vulnerabilities
+Link al projecte al CodeClimate [aquí](https://codeclimate.com/github/albertmayor/sintesi)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Wiki
 
-### License
+Link a l'apartat de la wiki d'Acacha del projecte [aquí](http://acacha.org/mediawiki/Usuari:Marc_Albert_Mayor_Rodriguez/M%C3%B2dul_de_S%C3%ADntesi)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+## Docs
+
